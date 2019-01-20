@@ -1,0 +1,97 @@
+#imagens {
+	float: left;
+	margin-top: 100px;
+	margin-left: 150px;
+}
+
+a img {border: none;}
+
+#blocoDestaques{
+	position: relative;
+}
+
+#blocoDestaques ul,
+#blocoDestaques ul li{
+	list-style:none;
+}
+
+#blocoDestaques,
+#blocoDestaques ul,
+#blocoDestaques ul li,
+#blocoDestaques ul li img{
+		margin:0px;
+		padding:0px;
+		width:550px;
+		height:414px;
+}
+
+#blocoDestaques ul li{
+	position:relative;
+}
+
+#blocoDestaques ul li div.fundo{
+	width:446px;
+	height:40px;
+	position:absolut;
+	bottom:0px;
+	left:0px;
+	bacground: #CCCCCC;
+}
+
+#blocoDestaques ul li p{
+	margin:0px;
+	padding:10px 15px;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	line-height:20px;
+	font-family:Verdana, Arial, sans-serif;
+	font-size:14px;
+}
+
+#blocoDestaques ul li p a{
+	color:black;
+	text-decoration:nome;
+}
+
+#blocoDestaques a.faixa{
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:-5px;
+	left:-5px;
+	z-index:100;
+	background:transparent url('../img/faixa.png') 0 0 norepeat;
+}
+
+#blocoDestaques div.paginas{
+	position:absolute;
+	top:5px;
+	right:5px;
+	z-index:100;
+}
+
+#blocoDestaques div.paginas a{
+	height:20px;
+	width:20px;
+	display:block;
+	float:left;
+	margin-left:2px;
+	color: #000000;
+	font-size:0;
+	font-family:Verdana, Arial, sans-serif;
+	text-decoration:none;
+	text-align:center;
+	line-height:20px;
+	outline:none;
+	background: url(../../imagens/sublink.png);
+}
+
+#blocoDestaques div.paginas a:hover,
+#blocoDestaques div.paginas a.activeSlide{
+	background: url(../../imagens/fundo.gif);
+	font-weight:bold;
+}
+
+#blocoDestaques ul li p,
+#blocoDestaques ul li div.fundo {display:none;}
