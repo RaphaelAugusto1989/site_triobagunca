@@ -8,6 +8,7 @@ require "sessao_time.php";
 <meta charset="utf-8">
 <title>Documento sem título</title>
 <link href="../css/style.css" type="text/css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
 body {
 	background-color: transparent;
@@ -22,20 +23,17 @@ body {
   require '../processos/connection.php';
   require '../processos/database.php';
 
-$numreg = 20; // Quantos registros por página vai ser mostrado
-  if (!isset($pg)) {
-      $pg = 0;
-  }
-  $inicial = $_GET['pg'] * $numreg; 
+  $numreg = 20; // Quantos registros por página vai ser mostrado
+
+  $pg = isset($_GET["pg"]) ? $_GET["pg"] : 1;
+  $inicial = ($pg * $numreg) - $numreg;
+
+  // Serve para contar quantos registros você tem na seua tabela para fazer a paginação
+  $sql = DBRead ("recados");
+  $countTotal = count($sql);// Quantidade de registros pra paginação
 
    //LÊ DADOS DO BANCO
    $recados = DBRead ("recados", "WHERE aprovacao = 'Sim' ORDER BY id_recado DESC LIMIT $inicial, $numreg", "id_recado, nome_recado, recado, data_hora, aprovacao, fotos");
-  
-  // Serve para contar quantos registros você tem na seua tabela para fazer a paginação
-  $sql = DBRead ("recados");
-
-  // Quantidade de registros pra paginação
-  $quant = count($sql);
 
   foreach ($recados as $rd) {
 ?>
@@ -54,7 +52,7 @@ $numreg = 20; // Quantos registros por página vai ser mostrado
       <b><?php echo $rd['nome_recado']?></b> 
       <span style=" font-size: 12px; margin-left: 10px;"><?php echo $rd['data_hora']?></span>
       <a href="../processos/bd_delet_recado.php?id=<?php echo $rd['id_recado'];?>" style="float:right; margin-right: 30px;">
-          <img src="../img/lixo.png" width='10%' class='excluir' >
+        <i class="fa fa-trash fa-2x" aria-hidden="true" title="Exluir" style="color: #EE0000; font-size: 25px;"></i>
         </a>
       </td>
     </tr>
@@ -72,8 +70,10 @@ $numreg = 20; // Quantos registros por página vai ser mostrado
 ?>
 <div id="paginacao">
 <?php
-  require "../paginacao.php";
-?>
+    if ($countTotal > $numreg) {
+       include("../paginacao.php"); // chamada do arquivo. ex: << Anterior 1 2 3 4 5 Próxima >>
+    }
+  ?>
 </div>
 </div>
 </body>

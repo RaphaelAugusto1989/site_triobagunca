@@ -24,26 +24,20 @@ require '../processos/config.php';
 require '../processos/connection.php';
 require '../processos/database.php';
 
-
-
   $numreg = 20; // Quantos registros por página vai ser mostrado
-  if (!isset($pg)) {
-      $pg = 0;
-  }
-  $inicial = $_GET['pg'] * $numreg; 
 
-   //LÊ DADOS DO BANCO
-  $lojas = DBRead ("galeria", "ORDER BY id_galeria DESC LIMIT $inicial, $numreg", "id_galeria, imagem_galeria");
+  $pg = isset($_GET["pg"]) ? $_GET["pg"] : 1;
+  $inicial = ($pg * $numreg) - $numreg; 
   
   // Serve para contar quantos registros você tem na seua tabela para fazer a paginação
   $sql = DBRead ("galeria");
+  $countTotal = count($sql);  // Quantidade de registros pra paginação
 
-  // Quantidade de registros pra paginação
-  $quant = count($sql);
+     //LÊ DADOS DO BANCO
+  $lojas = DBRead ("galeria", "ORDER BY id_galeria DESC LIMIT $inicial, $numreg", "id_galeria, imagem_galeria");
 
   foreach ($lojas as $lj) {
-		
-		?>
+?>
 <center>
 <table width="20%" border="0" cellpadding="0" cellspacing="0" class="tablesis">
 <tr onmouseover="ChangeColor(this, true);" onmouseout="ChangeColor(this, false);" onclick="DoNav('altera_linhas.php?id=<?php echo $lj['id_galeria'];?>');">
@@ -74,8 +68,10 @@ function aviso(id) {
 </center>
 <div id="paginacao">
 <?php
-  require "../paginacao.php";
-?>
+    if ($countTotal > $numreg) {
+       include("../paginacao.php"); // chamada do arquivo. ex: << Anterior 1 2 3 4 5 Próxima >>
+    }
+  ?>
 </div>
 </center>
 </div>

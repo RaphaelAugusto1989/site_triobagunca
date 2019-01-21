@@ -1,9 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
-
     $id_user = $_SESSION ["id_user"];
-
 	  require '../processos/config.php';
 	  require '../processos/connection.php';
 	  require '../processos/database.php';
@@ -18,7 +16,7 @@ if (!isset($_SESSION)) {
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/menu.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="js/script.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script> 
 <script type="text/javascript" src="js/script_conteudo.js"></script>
@@ -92,7 +90,7 @@ if (!isset($_SESSION)) {
 
 </iframe>
 <div id="rodape">
-	<p>Copyright © 2016-2017. Todos os direitos reservado </p>
+	<p>Copyright © 2016-<?php date_default_timezone_set('America/Sao_Paulo'); echo date(Y);?>. Todos os direitos reservado </p>
 </div>
 </body>
 
@@ -108,13 +106,11 @@ if (!isset($_SESSION)) {
      document.getElementById('txt').innerHTML=h+":"+m+":"+s;
      t=setTimeout('startTime()',500);
   }
-
   function checkTime(i) {
     if (i<10) {
       i="0" + i;
     }
     return i;
   }
-
 </script> 
 </html>
