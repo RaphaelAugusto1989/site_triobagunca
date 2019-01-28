@@ -4,19 +4,18 @@
 		<div id="titulos">
 			PINTURA DE ROSTO
 		</div>
-<p>
-A pintura de rosto é um dos serviços mais clássicos no mundo das festas infantis, o seu resultado é tão notável, criativo e divertido que mesmo com o passar dos anos ela não fica ultrapassada, na verdade jamais ficará, até alguns pais e convidados gostam de pintar o rosto.
-</p>
-<p>
-Os nossos pintores são capazes de fazer os mais distintos desenhos corporais, desde os badalados heróis e princesas até os bichos mais conhecidos da natureza. É super comum ver crianças de todas as idades encantadas com essa arte, braços, mãos e rosto são a maior pedida, claro, nossa equipe sempre leva em consideração as recomendações dos responsáveis.
-</p>
-<p>
-O serviço de Pintura de Rosto é oferecido pelo período de 3 horas, mas a depender do seu desejo esse tempo pode ser maior ou menor.
-</p>
-<p>
-Também é possível introduzir a arte de Balão Mania entre outras opções.
-Confira um pouco de nosso trabalho e solicite o seu orçamento o quanto antes para não ficar sem agenda.
-</p>
+			<p>
+				A pintura de rosto é um dos serviços mais clássicos no mundo das festas infantis, e o seu resultado é tão notável, criativo e divertido que mesmo com o passar dos anos ela não fica ultrapassada, inclusibe até alguns papais, mamães e convidados gostam de fazer as pinturinhas.
+			</p>
+			<p>
+				Os nossos pintores são capazes de fazer os mais distintos desenhos corporais, desde os badalados heróis e princesas, até os bichos mais conhecidos da natureza. É super comum ver crianças de todas as idades encantadas com essa arte nos braços, mãos e rosto. Vale lembrar que a nossa equipe sempre leva em consideração as recomendações dos responsáveis.
+			</p>
+			<p>
+				O serviço de Pintura de Rosto é oferecido pelo período de 3 horas, mas a depender do seu desejo, esse tempo pode ser maior ou menor.
+			</p>
+			<p>
+				Também é possível introduzir a arte de Balão Mania, entre outras opções. Confira um pouco de nosso trabalho e solicite o seu orçamento o quanto antes.
+			</p>
 <br />
 <div id="corpo_galeria">
 <?php

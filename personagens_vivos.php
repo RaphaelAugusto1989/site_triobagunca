@@ -4,21 +4,15 @@
 		<div id="titulos">
 			PERSONAGENS VIVOS
 		</div>
-<p>
-Os personagens vivos estão disponíveis para fazer a alegria de seu evento por 1 ou 2 horas, a depender de seu desejo esse tempo pode ser maior.
-</p>
-<p>
-Todos eles são fiéis aos originais em características físicas e vestuário além de atuarem como os mesmos. Hoje o Trio Bagunça conta com mais de 40 opções de diferentes personagens vivos, desde os mais clássicos e quase eternos como também as novidades do momento.
-</p>
-<p>
-Para apresentar melhor as opções no site, os personagens estão divididos por letra das iniciais de seus nomes.
-</p>
-<p>
-<b>Clique na letra inicial do nome de seu personagem preferido e confira algumas fotos.</b>
-</p>
-<p>
-Após conhecer um pouco do nosso trabalho, solicite o quanto antes seu orçamento para não ficar sem agenda.
-</p>
+                  <p>
+                        Os personagens vivos estão disponíveis para fazer a alegria de seu evento por 1 ou 2 horas, e a depender de seu desejo, esse tempo pode ser maior.
+                  </p>
+                  <p>
+                        Todos eles são fiéis aos originais em características físicas e vestuário, além de atuarem como os mesmos. Os personagens do Trio Bagunça têm como diferencial a enorme interação com as crianças, a qual  permite uma aproximação maior entre as crianças e os personagens, garantindo muita magia, inocência e diversão. Hoje o Trio Bagunça conta com diversas opções de diferentes personagens vivos, desde os mais clássicos e quase eternos, como também as novidades do momento.
+                  </p>
+                  <p>
+                        Para apresentar melhor as opções no site, os personagens estão divididos por letra das iniciais de seus nomes.
+                  </p>
 <nav class="alphabet">
    <ul>
       <li><a href="personagens.php?letra=A" target="frame">A</a></li>

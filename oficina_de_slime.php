@@ -5,7 +5,13 @@
 			Oficina de Slime
 		</div>
 		<p>
-			
+			O slime é a nova moda de massa de modelar que vem dominando o mundo infantil. A palavra significa viscoso ou pegajoso.
+		</p>
+		<p>
+			Também conhecida como amoeba, o Slime é a gourmetização da antiga geleca, brinquedo que fez muito sucesso nos anos 80. A novidade é que ela ganhou cores e texturas. A verdadeira graça está em fazê-lo e personaliza-lo com as próprias mãos. Juntar os ingredientes, fazer toda a alquimia da mistura e ver a mágica acontecer é o que deixa tudo mais divertido! Com as diversas possibilidades, fazer o próprio slime é uma atividade quase que terapêutica! Ao fazerem, os pequenos exercitam sua paciência, estimulam sua imaginação e criatividade e contribuem com o desenvolvimento motor e cognitivo, raciocínio, visão, sensorialidade, entre outras funções.
+		</p>
+		<p>
+			Nossa oficina de Slime é realizada por um monitor, o qual irá, juntamente com as crianças, realizar a receita do Slime. Cada criança recebe um Slime e pode personaliza-lo da forma que quiser. É sucesso total!! Conheça nossos pacotes e leve ainda mais diversão para a sua festa.
 		</p>
 		
 <br />
