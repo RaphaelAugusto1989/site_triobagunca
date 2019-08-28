@@ -1,0 +1,13 @@
+[23-May-2019 15:13:07 America/Chicago] PHP Warning:  gethostbyaddr(): Address is not a valid IPv4 or IPv6 address in /home/triob261/public_html/AcessosAoSistema.php on line 17
+[23-May-2019 15:15:47 America/Chicago] PHP Warning:  gethostbyaddr(): Address is not a valid IPv4 or IPv6 address in /home/triob261/public_html/AcessosAoSistema.php on line 17
+[23-May-2019 15:19:20 America/Chicago] PHP Parse error:  syntax error, unexpected ';' in /home/triob261/public_html/AcessosAoSistema.php on line 27
+[23-May-2019 15:30:05 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 15:30:06 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 15:30:06 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 15:30:07 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 15:30:07 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 15:30:07 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 15:30:08 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 15:30:08 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 17:51:03 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[23-May-2019 17:52:29 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
