@@ -59,6 +59,12 @@ if (!isset($_SESSION)) {
 				<li><a href="visualizar_pintura.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Pintura de Rosto</a></li>
 		      </ul>
 		   </li>
+		   <li class='active has-sub'><a href='#'><span>Eventos</span></a>
+		      <ul>
+		         <li><a href="sis_evento.php" target="frame"><i class="fa fa-user-plus" aria-hidden="true"></i>Cadastrar Evento</a></li>
+		         <li><a href="visualizar_eventos.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Visualizar Eventos</a></li>
+		      </ul>
+		   </li>
 		   <li class='active has-sub'><a href='#'><span>Parceiros</span></a>
 		      <ul>
 		         <li><a href="sis_trio.php" target="frame"><i class="fa fa-user-plus" aria-hidden="true"></i>Cadastrar Parceiro</a></li>

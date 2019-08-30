@@ -91,7 +91,7 @@ function test_input($data) {
     <tr>
       <td>
       <?php echo @$ErrNome; ?><br />
-      <input type="text" name="nome"<?php if ($ErrNome == true) { echo "style='width: 50%; color: #C40003; border: 2px #A70002 solid;'";} ?> class="nomerecado" required onFocus="(this.value == 'Nome:') ? this.value = '' : ''" onBlur="if (this.value == '')this.value='Nome:';" value="Nome:">
+      <input type="text" name="nome"<?php if ($ErrNome == true) { echo "style='width: 50%; color: #C40003; border: 2px #A70002 solid;'";} ?> class="nomerecado" required placeholder="Nome">
       
       <span class="foto_recado">Inserir Foto: <?php echo @$ErrFile; ?>
       	<input type="file" name="imagem"  class="foto_recado_file" <?php if ($ErrFile == true) { echo "style='color: #C40003; border: 2px #A70002 solid;'";} ?>>
@@ -100,7 +100,7 @@ function test_input($data) {
     </tr>
     <tr>
       <td>
-      	<textarea name="recado" class="contato" style="margin-bottom: 5px; height: 100px;" required onFocus="(this.value == 'Recado') ? this.value = '' : ''" onBlur="if (this.value == '')this.value='Recado:';" value="Recado:">Recado:</textarea>
+      	<textarea name="recado" class="contato" style="margin-bottom: 5px; height: 100px;" required placeholder="Deixe seu Recado!" value=""></textarea>
       </td>
     </tr>
     <tr>
