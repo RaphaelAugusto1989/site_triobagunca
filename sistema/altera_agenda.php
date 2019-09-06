@@ -88,7 +88,11 @@ body {
     </tr>
     <tr>
       <td height="46">Data:
-      	<input type="text" name="data" id="date" class="contato" style="width: 98%;" placeholder="DD/MM/AAAA"  maxlength="10" value="<?php echo $tr['data']; ?>">
+        <?php
+            $date = explode('-', $rd['data']);
+            $data = $date[2].'/'.$date[1].'/'.$date[0];
+	  	  ?>
+      	<input type="text" name="data" id="date" class="contato" style="width: 98%;" placeholder="DD/MM/AAAA"  maxlength="10" value="<?php echo $data; ?>">
       </td>
     </tr>
     <tr>

@@ -40,31 +40,26 @@ body {
 <table width="90%" border="0" cellspacing="2" cellpadding="2" id="sis_table_recados">
   <tbody>
   	<tr>
-      <td width="18%" rowspan="3" align="center" valign="top"> 
+      <td width="18%" rowspan="3" valign="top"> 
       	<?php
             $date = explode('-', $rd['data']);
             echo  $date[2].'/'.$date[1].'/'.$date[0];
-	  	?>
+	  	  ?>
 	  </td>
     </tr>
     <tr>
       <td width="82%" height="10" valign="top">
-      <b><?php echo $rd['nome_recado']?></b> 
-      <span style=" font-size: 12px; margin-left: 10px;"><?php echo $rd['data_hora']?></span>
-      <a href="../processos/bd_delet_recado.php?id=<?php echo $rd['id_recado'];?>" style="float:right; margin-right: 30px;">
-        <i class="fa fa-trash fa-2x" aria-hidden="true" title="Exluir" style="color: #EE0000; font-size: 25px;"></i>
+      <span style="margin-left: 10px;"><?php echo $rd['evento']?></span>
+        <a href="../processos/bd_delet_evento.php?id=<?php echo $rd['id_agenda'];?>" style="float:right; margin-right: 30px;">
+              <i class="fa fa-trash fa-2x" aria-hidden="true" title="Exluir" style="color: #EE0000; font-size: 25px;"></i>
         </a>
-      </td>
-    </tr>
-    <tr>
-      <td  valign="top">
-	  	<?php echo $rd['recado']?>
-      	
+        <a href="altera_evento?id=<?php echo $rd['id_agenda'];?>" style="float:right; margin-right: 30px;">
+            <i class="fa fa-edit fa-2x" aria-hidden="true" title="Alterar" style="color: #006400; font-size: 25px;"></i>
+        </a>
       </td>
     </tr>
   </tbody>
 </table>
-
 <?php
   }
 ?>
