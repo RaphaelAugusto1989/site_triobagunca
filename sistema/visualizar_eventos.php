@@ -50,7 +50,7 @@ body {
     <tr>
       <td width="82%" height="10" valign="top">
       <span style="margin-left: 10px;"><?php echo $rd['evento']?></span>
-        <a href="../processos/bd_delet_evento.php?id=<?php echo $rd['id_agenda'];?>" style="float:right; margin-right: 30px;">
+        <a href="../processos/bd_delet_agenda.php?id=<?php echo $rd['id_agenda'];?>" style="float:right; margin-right: 30px;">
               <i class="fa fa-trash fa-2x" aria-hidden="true" title="Exluir" style="color: #EE0000; font-size: 25px;"></i>
         </a>
         <a href="altera_evento?id=<?php echo $rd['id_agenda'];?>" style="float:right; margin-right: 30px;">

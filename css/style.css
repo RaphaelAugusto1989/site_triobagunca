@@ -842,3 +842,28 @@ li.logoff a:hover {
 	margin: 5px;
 }
 /*FIM PAGINAÇÃO*/
+
+/*INICIO PAGINA EVENTOS*/
+.data_evento {
+	width: 10%;
+	float: left;
+	margin: 10px;
+}
+
+.dia {
+	color: #CD0000;
+	font-size: 30px;
+	border-bottom: 1px solid #065580;
+	text-align: center;
+	margin: 0 30px 0 30px;
+}
+
+.titevent {
+	margin-left: 30px;
+	font-size: 26px; 
+}
+
+tr.table_recados a {
+	text-decoration: none;
+}
+/*FIM PAGINA EVENTOS*/
