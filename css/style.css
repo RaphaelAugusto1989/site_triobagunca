@@ -863,7 +863,11 @@ li.logoff a:hover {
 	font-size: 26px; 
 }
 
-tr.table_recados a {
+.event {
 	text-decoration: none;
+}
+
+.event :hover {
+	text-decoration: underline;
 }
 /*FIM PAGINA EVENTOS*/

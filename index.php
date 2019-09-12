@@ -132,10 +132,10 @@ $recados = DBRead ("recados", "WHERE aprovacao = 'Sim' ORDER BY id_recado DESC L
   	<tr>
       <td width="13%" rowspan="3" align="center" valign="top"> 
       	<?php
-			if ($rd['fotos'] == false) { echo "<img src=\"img/sombra.jpg\" class=\"foto_cliente\">"; }
-			else { echo "<img src=\"img/clientes/".$rd['fotos']."\" class=\"foto_cliente\">"; }
-	  	?>
-	  </td>
+          if ($rd['fotos'] == false) { echo "<img src=\"img/sombra.jpg\" class=\"foto_cliente\">"; }
+          else { echo "<img src=\"img/clientes/".$rd['fotos']."\" class=\"foto_cliente\">"; }
+          ?>
+	      </td>
     </tr>
     <tr>
       <td width="87%" height="10" valign="top"><b><?php echo $rd['nome_recado']?></b> <span style=" font-size: 12px; margin-left: 10px;"><?php echo $rd['data_hora']?></span></td>

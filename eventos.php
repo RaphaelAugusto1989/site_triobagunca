@@ -19,9 +19,11 @@
 			$countTotal = count($sql);// Quantidade de registros pra paginação
 
 			//LÊ DADOS DO BANCO
-			$agenda = DBRead ("agenda", " ORDER BY data DESC LIMIT $inicial, $numreg", "*");
+			$agenda = DBRead ("agenda", " ORDER BY data ASC LIMIT $inicial, $numreg", "*");
 
 			foreach ($agenda as $rd) {
+				$DataHoje = date('Y-m-d');
+				if ($rd['data'] >= $DataHoje) {
 		?>
 		<a href="evento_detalhe.php?id=<?php echo $rd['id_agenda'];?>" class="event">
 			<table width="100%" align="center" border="0" cellspacing="2" cellpadding="2" id="table_recados">
@@ -72,6 +74,7 @@
 			</table>
 		</a>
 		<?php
+				}
 			}
 		?>
 	</div><!--FIM TEXTO-->
