@@ -78,7 +78,7 @@ body {
 
 .menu ul li a {
 	padding: 5px;
-	width: 170px;
+	width: 146px; /*LARGURA DO MENU*/
 	height: 25px;
 	display: inline-block;
 	text-decoration: none;
@@ -288,17 +288,17 @@ label[for="bt_menu"]{
 	height: 30px;
 	border-radius: 5px 5px 5px 5px;
 	padding: 10px;
-	color: hsla(0,0%,100%,1.00);
+	color: #000142;
 	font-size: 20px;
 	font-weight: bold;
 	margin: 20px 0 20px 0;
 	float: left;
-	background-color: #0072B0;
-	background: -webkit-linear-gradient(#0072B0, #1A80B7);
-  	background: -moz-linear-gradient(#0072B0, #1A80B7);
- 	background: -o-linear-gradient(#0072B0, #1A80B7);
-  	background: -ms-linear-gradient(#0072B0, #1A80B7);
-  	background: linear-gradient(#0072B0, #1A80B7);
+	background-color: rgb(255, 204, 0);
+	background: -webkit-linear-gradient(rgb(255, 204, 0), rgb(216, 173, 0));
+  	background: -moz-linear-gradient(rgb(255, 204, 0),rgb(216, 173, 0));
+ 	background: -o-linear-gradient(rgb(255, 204, 0),rgb(216, 173, 0));
+  	background: -ms-linear-gradient(rgb(255, 204, 0),rgb(216, 173, 0));
+  	background: linear-gradientrgb(255, 204, 0),(rgb(216, 173, 0));
   	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
@@ -365,9 +365,9 @@ value.msg {
 }
 
 .button{
-	background: #6699FF;
+	background: #99CC33;
 	padding: 12px 32px;
-	color: #fff;
+	color: #000142;
 	font-size: 1em;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -379,11 +379,11 @@ value.msg {
 	-webkit-appearance:none;
 }
 .button:hover{
-	background-color: #99CC33;
+	background-color: #6699FF;
 }
 
 .button:active{
-	background-color: #99CC33; 
+	background-color: #6699FF; 
 }
 
 .captcha {
@@ -408,7 +408,7 @@ value.msg {
 	height: 96%;
 	margin-right: 13px;
 	margin-bottom: 13px;
-	border: 3px solid #0072B0;
+	border: 3px solid #99CC33;
 	object-fit: cover;
 	object-position: top;
 }
@@ -441,7 +441,7 @@ value.msg {
 	margin-bottom: 8px;
 	text-align: center;
 	object-fit: cover;
-	border: 3px solid #0072B0;
+	border: 3px solid #99CC33;
 }
 
 .hoverzoom > img {
@@ -850,12 +850,27 @@ li.logoff a:hover {
 	margin: 10px;
 }
 
+.bordatopo {
+	border: 1px 1px 0 1px solid #065580;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 0 10px 0 10px;
+}
+
+.borda {
+	border: 1px solid #065580;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 0 10px 0 10px;
+
+}
+
 .dia {
 	color: #CD0000;
 	font-size: 30px;
 	border-bottom: 1px solid #065580;
 	text-align: center;
-	margin: 0 30px 0 30px;
+	margin: 10px;
 }
 
 .titevent {

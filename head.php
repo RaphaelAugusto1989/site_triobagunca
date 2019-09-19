@@ -94,13 +94,13 @@
 							<li><a href="animacao_infantil">Animação Infantil</a></li>
 							<li><a href="camarim_fashion">Camarim Fashion</a></li>
 							<li><a href="contacao_de_historias">Contação de Histórias/Teatro</a></li>
-							<li><a href="eventos">Eventos</a></li>
 							<li><a href="oficina_de_slime">Oficina de Slime</a></li>
 							<li><a href="personagens_vivos">Personagens Vivos</a></li>
 							<li><a href="pintura_de_rosto">Pintura de Rosto</a></li>
 						</ul>
 					</li>
 					<li><a href="trio_bagunca">Equipe</a></li>
+					<li><a href="eventos">Eventos</a></li>
 					<li><a href="galeria">Galeria</a></li>
 					<li><a href="contatos">Contatos</a></li>
 				</ul>
