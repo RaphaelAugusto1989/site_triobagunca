@@ -11,10 +11,13 @@
 <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
 <script type="text/javascript" src="js/jquery.destaques.js"></script>
+<script type="text/javascript" src="js/jquery.mask.min.js"></script>
 <script type="text/javascript" src="js/lightbox-2.6.min.js"></script>
 <script type="text/javascript" src="js/slick.min.js"></script>
 <script type="text/javascript" src="js/textzoom.js"></script>
 <script type="text/javascript" src="js/slick.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/mask.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/busca_cep.js" charset="utf-8"></script>
 <script type="text/javascript">
 	function mascara(telefone) { 
 	   	if(telefone.value.length == 0)
@@ -99,6 +102,7 @@
 							<li><a href="pintura_de_rosto">Pintura de Rosto</a></li>
 						</ul>
 					</li>
+					<li><a href="espaco_bagunca">Espaço Bagunça</a></li>
 					<li><a href="trio_bagunca">Equipe</a></li>
 					<li><a href="eventos">Eventos</a></li>
 					<li><a href="galeria">Galeria</a></li>

@@ -1,9 +1,7 @@
 <?php include "head.php"; ?>
 <div id="corpo"><!--INICIO CORPO-->
 	<div class="texto">
-		<div id="titulos">
-			PRÓXIMOS EVENTOS
-		</div>
+		<div id="titulos"> ESPAÇO BAGUNÇA</div>
 		<?php
 			require 'processos/config.php';
 			require 'processos/connection.php';
@@ -15,11 +13,11 @@
 			$inicial = ($pg * $numreg) - $numreg;
 
 			// Serve para contar quantos registros você tem na seua tabela para fazer a paginação
-			$sql = DBRead ("agenda");
+			$sql = DBRead ("agenda", "WHERE local = 'Espaço Bagunça'");
 			$countTotal = count($sql);// Quantidade de registros pra paginação
 
 			//LÊ DADOS DO BANCO
-			$agenda = DBRead ("agenda", " ORDER BY data ASC LIMIT $inicial, $numreg", "*");
+			$agenda = DBRead ("agenda", "WHERE local = 'Espaço Bagunça' ORDER BY data ASC LIMIT $inicial, $numreg", "*");
 
 			/*
 			foreach ($agenda as $rd) {
@@ -32,11 +30,11 @@
 					} else
 			*/
 
-			if(!empty($agenda)){
+			if(!empty($agenda)) {
 				$DataHoje = date("Ymd");
 				$temEvento = false;
-				foreach($agenda as $rd){
-					if(str_replace("-","",$rd['data']) >= $DataHoje){		
+				foreach($agenda as $rd) {
+					if(str_replace("-","",$rd['data']) >= $DataHoje) {		
 		?>
 		<a href="evento_detalhe.php?id=<?php echo $rd['id_agenda'];?>" class="event">
 			<table width="100%" align="center" border="0" cellspacing="2" cellpadding="2" id="table_recados">
@@ -91,9 +89,9 @@
 		<?php
 					}
 				}
-			}
+			}	
 
-			if ($temEvento != false) {
+			if ($temEvento == false) {
 				echo '<center>Infelizmente não temos eventos cadastrados no momento!</center>';
 			}
 		?>

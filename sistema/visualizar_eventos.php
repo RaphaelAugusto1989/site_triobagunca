@@ -18,6 +18,16 @@ body {
 
 <body>
 <div id="container">
+<table width="90%" border="0" cellspacing="2" cellpadding="2" id="sis_table_evento">
+  <thead>
+    <tr>
+      <th align="left">Data</th>
+      <th align="left">Evento</th>
+      <th align="left">Local</th>
+      <th width="5%" align="center">Alterar</th>
+      <th width="5%" align="center">Excluir</th>
+    </tr>
+  </thead>
 <?php
   require '../processos/config.php';
   require '../processos/connection.php';
@@ -37,32 +47,36 @@ body {
 
   foreach ($agenda as $rd) {
 ?>
-<table width="90%" border="0" cellspacing="2" cellpadding="2" id="sis_table_recados">
-  <tbody>
+  <tbody style="border-bottom: 1px solid #080077;">
   	<tr>
-      <td width="18%" rowspan="3" valign="top"> 
+      <td width="18%" valign="top"> 
       	<?php
             $date = explode('-', $rd['data']);
             echo  $date[2].'/'.$date[1].'/'.$date[0];
 	  	  ?>
-	  </td>
-    </tr>
-    <tr>
-      <td width="82%" height="10" valign="top">
-      <span style="margin-left: 10px;"><?php echo $rd['evento']?></span>
-        <a href="../processos/bd_delet_agenda.php?id=<?php echo $rd['id_agenda'];?>" style="float:right; margin-right: 30px;">
+	    </td>
+      <td valign="top"> 
+          <?php echo $rd['evento']?>
+	    </td>
+      <td  valign="top"> 
+          <?php echo $rd['local']?>
+      </td>
+      <td width="5%" align="center">
+          <a href="altera_evento?id=<?php echo $rd['id_agenda'];?>">
+              <i class="fa fa-edit fa-2x" aria-hidden="true" title="Alterar" style="color: #006400; font-size: 25px;"></i>
+          </a>
+	    </td>
+      <td width="5%" align="center">
+          <a href="../processos/bd_delet_agenda.php?id=<?php echo $rd['id_agenda'];?>">
               <i class="fa fa-trash fa-2x" aria-hidden="true" title="Exluir" style="color: #EE0000; font-size: 25px;"></i>
-        </a>
-        <a href="altera_evento?id=<?php echo $rd['id_agenda'];?>" style="float:right; margin-right: 30px;">
-            <i class="fa fa-edit fa-2x" aria-hidden="true" title="Alterar" style="color: #006400; font-size: 25px;"></i>
-        </a>
+          </a>
       </td>
     </tr>
   </tbody>
-</table>
 <?php
   }
 ?>
+</table>
 <div id="paginacao">
 <?php
     if ($countTotal > $numreg) {

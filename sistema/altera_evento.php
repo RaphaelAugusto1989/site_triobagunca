@@ -43,12 +43,14 @@ body {
   $titulo_evento = test_input($_POST["titulo"]);
   $data_evento = $date[2].'-'.$date[1].'-'.$date[0];
   $hora_evento = test_input($_POST["hora"]);
+  $local_evento = test_input($_POST["local"]);
   $detalhe_evento = test_input($_POST["detalhe"]);
 
   $evento = array (
     'evento' => $titulo_evento,
     'data' => $data_evento,
     'hora' => $hora_evento,
+    'local' => $local_evento,
     'obs' => $detalhe_evento
   );
   
@@ -106,12 +108,16 @@ foreach ($le_agenda as $rd){
         </td>
     </tr>
     <tr>
+    	<td height="46" colspan='2'>Local do Evento:<br />
+        <select name="local" class="contato" style="width: 99%; height: 43px;">
+              <option value="Espaço Bagunça" <?php if ($rd['local'] == 'Espaço Bagunça') { echo "selected"; }?> >Espaço Bagunça</option>
+              <option value="Externo" <?php if ($rd['local'] == 'Externo') { echo "selected"; }?>>Externo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
     	<td height="46" colspan='2'>Detalhe do Evento:
-        <textarea name="detalhe" class="contato" id="" style="width: 98%; height: 150px;" >
-            <?php
-                echo $rd['obs'];
-            ?>
-        </textarea>
+        <textarea name="detalhe" class="contato" id="" style="width: 98%; height: 150px;" ><?php echo $rd['obs']; ?></textarea>
       </td>
     </tr>
     <tr>

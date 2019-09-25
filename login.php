@@ -67,22 +67,30 @@ foreach ($user as $us) {
 <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
   <tbody>
   	<tr>
-      <td height="95" align="center" valign="top">
-      	<img src="img/logo-trio.png" style="width: 90%;">
+      <td height="95" colspan="2" align="center" valign="top">
+      	<img src="img/logo-trio.png" style="width: 70%;">
       </td>
     </tr>
     <tr>
-      <td height="58" align="center" valign="middle">
-      	<input type="text" name="login" class="contato" placeholder="Login" style="width:100%;">
+      <td height="58" colspan="2" align="center" valign="middle">
+      	<input type="text" name="login" class="contato" placeholder="Login ou E-mail" style="width:100%;">
       </td>
     </tr>
     <tr>
-      <td height="42" align="center" valign="middle">
+      <td height="42" colspan="2" align="center" valign="middle">
       	<input type="password" name="senha" class="contato" placeholder="Senha" style="width:100%;">
       </td>
     </tr>
+	<tr>
+      <td height="69" align="center" valign="top">
+			<a href="esqueci_minha_senha" class="link">Esqueci minha senha!</a>
+      </td>
+	  <td height="69" align="center" valign="top">
+			<a href="cadastrar-me" class="link">Não Sou Cadastrado!</a>
+      </td>
+    </tr>
     <tr>
-      <td height="69" align="center" valign="middle">
+      <td height="69" colspan="2" align="center" valign="middle">
       	<input type="submit" name="button" value="Entrar" class="button">
       </td>
     </tr>

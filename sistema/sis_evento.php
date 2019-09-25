@@ -41,13 +41,15 @@ body {
   $titulo_evento = test_input($_POST["titulo"]);
   $data_evento = $date[2].'-'.$date[1].'-'.$date[0];
   $hora_evento = test_input($_POST["hora"]);
+  $local_evento = test_input($_POST["local"]);
   $detalhe_evento = test_input($_POST["detalhe"]);
 
   $evento = array (
     'evento' => $titulo_evento,
-	'data' => $data_evento,
-	'hora' => $hora_evento,
-	'obs' => $detalhe_evento
+	  'data' => $data_evento,
+    'hora' => $hora_evento,
+    'local' => $local_evento,
+    'obs' => $detalhe_evento
   );
   
   ///echo "<pre>";
@@ -92,6 +94,14 @@ body {
         <td height="46">Horário do Evento:<br />
             <input type="text" name="hora" class="contato" maxlength="5" placeholder="00:00" onkeyup="formatar('00:00', this, event)" style="width: 96%;">
         </td>
+    </tr>
+    <tr>
+    	<td height="46" colspan='2'>Local do Evento:<br />
+        <select name="local" class="contato" style="width: 99%; height: 43px;">
+            <option value="Espaço Bagunça">Espaço Bagunça</option>
+            <option value="Externo">Externo</option>
+        </select>
+      </td>
     </tr>
     <tr>
     	<td height="46" colspan='2'>Detalhe do Evento:

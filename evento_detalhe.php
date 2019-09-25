@@ -29,6 +29,8 @@
             <p><b>Horário:</b> <?php echo $rd['hora']?></p>
             <p><b>Local:</b> <?php echo $rd['local']?></p>
             <p><?php echo $rd['obs']?></p>
+			<br />
+			<center><button onclick="location.href='login'" class="button" style="width: 30%;"><b>Comprar</b></button></center>
         </div>
         
 		<?php
