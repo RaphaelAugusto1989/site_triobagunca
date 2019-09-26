@@ -15,11 +15,11 @@
 			$inicial = ($pg * $numreg) - $numreg;
 
 			// Serve para contar quantos registros você tem na seua tabela para fazer a paginação
-			$sql = DBRead ("agenda");
+			$sql = DBRead ("agenda", "WHERE local = 'Externo'");
 			$countTotal = count($sql);// Quantidade de registros pra paginação
 
 			//LÊ DADOS DO BANCO
-			$agenda = DBRead ("agenda", " ORDER BY data ASC LIMIT $inicial, $numreg", "*");
+			$agenda = DBRead ("agenda", "WHERE local = 'Externo' ORDER BY data ASC LIMIT $inicial, $numreg", "*");
 
 			/*
 			foreach ($agenda as $rd) {
@@ -93,7 +93,7 @@
 				}
 			}
 
-			if ($temEvento != false) {
+			if ($temEvento == false) {
 				echo '<center>Infelizmente não temos eventos cadastrados no momento!</center>';
 			}
 		?>

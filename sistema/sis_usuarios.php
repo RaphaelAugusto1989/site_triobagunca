@@ -27,14 +27,22 @@ body {
     
   //RECEBE DADOS DO FORMULARIO
   $nome = test_input($_POST["nome"]);
+  $sobrenome = test_input($_POST["sobrenome"]);
+  $sexo = test_input($_POST["sexo"]);
   $email = test_input($_POST["email"]);
+  $cpf = test_input($_POST["cpf"]);
+  $nascimento = test_input($_POST["nascimento"]);
   $usuario = test_input($_POST["usuario"]);
-  $senha = test_input($_POST["senha"]);
+  $senha = md5(test_input($_POST["senha"]));
 			
   $user = array (
     'nome_usuario' => $nome,
+    'sobrenome_usuario' => $sobrenome,
+    'sexo_usuario' => $sexo,
     'email_usuario' => $email,
-	'login_usuario' => $usuario,
+    'cpf_usuario' => $cpf,
+    'nascimento_usuario' => $nascimento,
+	  'login_usuario' => $usuario,
     'senha_usuario' => $senha
   );
   
@@ -61,27 +69,43 @@ body {
 <center>
 <table width="80%" border="0" cellspacing="3" cellpadding="0">
   <tbody>
-  <tr>
+    <tr>
       <td height="67" align="CENTER" colspan="2">INSERIR USUÁRIO</td>
-
-    </tr
-    ><tr>
-      <td width="133" colspan="2">Nome:
-      	<input type="text" name="nome" class="contato" style="width: 98%;">
+    </tr>
+    <tr>
+      <td width="133">CPF: <br />
+      	<input type="text" name="cpf" class="contato cpf" maxlength="14" style="width: 98%;" placeholder="CPF" required>
+      </td>
+      <td width="133">Data de Nascimento:
+        <input type="text" name="nascimento" class="contato data" maxlength="10" style="width: 97%;">
       </td>
     </tr>
     <tr>
-    	<td height="46" colspan="2">E-mail:
-      	<input type="text" name="email" class="contato" style="width: 98%;">
+      <td width="133">Nome:
+      	<input type="text" name="nome" class="contato" style="width: 97%;">
+      </td>
+      <td width="133">Sobrenome:
+        <input type="text" name="sobrenome" class="contato" style="width: 97.5%;">
+      </td>
+    </tr>
+    <tr>
+    	<td height="46">E-mail:
+      	<input type="text" name="email" class="contato" style="width: 97%;">
+      </td>
+      <td height="46">Sexo:
+        <select name="sexo" style="width: 100%; height: 40px;" class="contato">
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+        </select>
       </td>
     </tr>
     <tr>
       <td>Usuário:<br />
-      <input type="text" name="usuario" class="contato" style="width: 94%;">
+      <input type="text" name="usuario" class="contato" style="width: 97%;">
       </td>
       <td>
       Senha:<br />
-      <input type="password" name="senha" class="contato" style="width: 95%;">
+      <input type="password" name="senha" class="contato" style="width: 98%;">
       </td>
     </tr>
     <tr>

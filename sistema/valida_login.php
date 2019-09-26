@@ -10,7 +10,7 @@ if (($hora_do_dia >=18) && ($hora_do_dia <=24)) { $cumprimento = "Boa Noite,"; }
      if (isset ($_SESSION["login"])){
         
         echo "$cumprimento ";
-        echo $_SESSION ["nome"];
+        echo $_SESSION["nome"];
  
         if ($_SESSION['time'] <= time()) {
             session_unset();

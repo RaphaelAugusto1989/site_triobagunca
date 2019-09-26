@@ -5,16 +5,18 @@
 			MEU CADASTRO
 		</div>
 
-        <?php
-  require '../processos/config.php';
-  require '../processos/connection.php';
-  require '../processos/database.php';
+<?php
+date_default_timezone_set('America/Sao_Paulo');
+
+require 'processos/config.php';
+require 'processos/connection.php';
+require 'processos/database.php';
   
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
   //RECEBE DADOS DO FORMULARIO
   $cpf	        = test_input($_POST["cpf"]);
-  $nascimento 	= test_input($_POST["nascimento"]);
+  $nascimento 	= date('Y-m-d', strtotime(test_input($_POST["nascimento"])));
   $nome 	    = test_input($_POST["nome"]);
   $fixo 	    = test_input($_POST["fixo"]);
   $celular 	    = test_input($_POST["celular"]);
@@ -26,53 +28,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $estado 	    = test_input($_POST["estado"]);
   $complemento 	= test_input($_POST["complemento"]);
   $login 		= test_input($_POST["login"]);
-  $senha 	    = test_input($_POST["senha"]);
+  $senha 	    = md5(test_input($_POST["senha"]));
+  $CreateDate   = date('Y-m-d H:i:s');
+ 
+  //LÊ DADOS DO BANCO
+  $le_cliente = DBRead ("clientes", "WHERE cpf_cli = '$cpf' OR email_cli = '$email' OR login_cli = '$login'", "*");
+	
+	if ($le_cliente) {	
+		foreach ($le_cliente as $cl) {
+			if ($cpf == $cl['cpf_cli']) {
+				echo "<script> alert('CPF já Cadastrado!') </script>";
+				echo "<script>javascript:history.back()</script>";
+			} if($email == $cl['email_cli']) {
+				echo "<script> alert('E-mail já Cadastrado!') </script>";
+				echo "<script>javascript:history.back()</script>";
+			} if($login == $cl['login_cli']) {
+				echo "<script> alert('Esté Login já está sendo utilizado!') </script>";
+				echo "<script>javascript:history.back()</script>";
+			} 
+		} //FIM FOREACH
+	} else {
+			$cliente = array (
+				'cpf_cli' => $cpf,
+				'nome_cli' => $nome,
+				'nasc_cli' => $nascimento,
+				'fixo_cli' => $fixo,
+				'cel_cli' => $celular,
+				'email_cli' => $email,
+				'cep_cli' => $cep,
+				'rua_cli' => $rua,
+				'cidade_cli' => $cidade,
+				'bairro_cli' => $bairro,
+				'estado_cli' => $estado,
+				'comp_cli' => $complemento,
+				'login_cli' => $login,
+				'pass_cli' => $senha,
+				'create_datetime' => $CreateDate
+			);
+
+			//echo ' <pre>';
+			//print_r($cliente);
+			//exit;
 			
-  
-  $agenda = array (
-    'cpf_cli' => $cpf,
-    'nome_cli' => $nome,
-	'nasc_cli' => $nascimento,
-    'fixo_cli' => $fixo,
-	'cel_cli' => $celular,
-	'email_cli' => $email,
-    'cep_cli' => $cep,
-    'rua_cli' => $rua,
-    'cidade_cli' => $cidade,
-	'bairro_cli' => $bairro,
-    'estado_cli' => $estado,
-	'comp_cli' => $complemento,
-	'login_cli' => $login,
-	'pass_cli' => $senha
-  );
-  
-	$altera = DBUpDate('agenda', $agenda, "id_agenda = '".$id."'");
-  
-  if ($altera) {
-    echo "<script> alert('Alterado com sucesso!') </script>";
-    echo "<script>location.href=('altera_agenda.php?id=$id')</script>";
-  }
-  else { 
-    echo "Erro ao alterar, tente novamente mais tarde!";
-    exit;
-    }
+			$save = DBCreate('clientes', $cliente);
+			
+			if ($save) {
+				echo "<script> alert('Você foi cadastrado com sucesso!') </script>";
+				echo "<script>location.href=('login')</script>";
+			} else { 
+				echo "Erro ao se cadastrar, tente novamente mais tarde!";
+				exit;
+			}
+	} //FIM ELSE
+}//FIM IF POST
+
+function test_input($data) {
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
 }
-  function test_input($data) {
-      $data = trim($data);
-      $data = stripslashes($data);
-      $data = htmlspecialchars($data);
-      return $data;
-  }
-  
-    //LÊ DADOS DO BANCO
-  $le_agenda = DBRead ("agenda", "WHERE id_agenda = '$cod'", "*");
-
-  foreach ($le_agenda as $tr){
-
 ?>
-
 		<center>
-			<form action="cadastro_cliente.php" method="post" autocomplete="on">
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
 				<table border="0" align="center" width="100%"  cellpadding="0" cellspacing="0">
                   <tr height="30">
 					<td align="left" colspan="2">
@@ -87,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				  </tr>
                   <tr>
 					<td align="left" valign="top">
-						<input type="text" name="nome" class="contato" placeholder="Nome Completo" required >
+						<input type="text" name="nome" class="contato" placeholder="Nome Completo do Responsável" required >
 					</td>
 				  </tr>
 				  <tr>
@@ -98,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				  </tr>
 				  <tr>
 					<td align="left" valign="top">
-					<input type="email" name="email" autocomplete="off" class="contato" placeholder="E-mail" required>
+					<input type="text" name="email" class="contato" placeholder="E-mail" required>
 					</td>
 				  </tr>
                   <tr height="40" valign="top">
@@ -137,8 +155,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				  </tr>
                   <tr>
 					<td align="left" valign="top">
-                        <input type="text" name="login" class="contato" placeholder="Login" style="width: 48%;">
-					    <input type="pass" name="senha" class="contato" placeholder="Senha" maxlength="2" style="width: 49%;">
+                        <input type="text" name="login" class="contato" placeholder="Login" style="width: 48%;" required>
+					    <input type="password" name="senha" class="contato" placeholder="Senha" style="width: 49%;" required>
 					</td>
                   </tr>
 				  <tr>
