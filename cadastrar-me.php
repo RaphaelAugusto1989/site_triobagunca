@@ -4,12 +4,79 @@
 		<div id="titulos">
 			MEU CADASTRO
 		</div>
+
+        <?php
+  require '../processos/config.php';
+  require '../processos/connection.php';
+  require '../processos/database.php';
+  
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+  //RECEBE DADOS DO FORMULARIO
+  $cpf	        = test_input($_POST["cpf"]);
+  $nascimento 	= test_input($_POST["nascimento"]);
+  $nome 	    = test_input($_POST["nome"]);
+  $fixo 	    = test_input($_POST["fixo"]);
+  $celular 	    = test_input($_POST["celular"]);
+  $email 		= test_input($_POST["email"]);
+  $cep 	        = test_input($_POST["cep"]);
+  $rua	        = test_input($_POST["rua"]);
+  $cidade 	    = test_input($_POST["cidade"]);
+  $bairro 	    = test_input($_POST["bairro"]);
+  $estado 	    = test_input($_POST["estado"]);
+  $complemento 	= test_input($_POST["complemento"]);
+  $login 		= test_input($_POST["login"]);
+  $senha 	    = test_input($_POST["senha"]);
+			
+  
+  $agenda = array (
+    'cpf_cli' => $cpf,
+    'nome_cli' => $nome,
+	'nasc_cli' => $nascimento,
+    'fixo_cli' => $fixo,
+	'cel_cli' => $celular,
+	'email_cli' => $email,
+    'cep_cli' => $cep,
+    'rua_cli' => $rua,
+    'cidade_cli' => $cidade,
+	'bairro_cli' => $bairro,
+    'estado_cli' => $estado,
+	'comp_cli' => $complemento,
+	'login_cli' => $login,
+	'pass_cli' => $senha
+  );
+  
+	$altera = DBUpDate('agenda', $agenda, "id_agenda = '".$id."'");
+  
+  if ($altera) {
+    echo "<script> alert('Alterado com sucesso!') </script>";
+    echo "<script>location.href=('altera_agenda.php?id=$id')</script>";
+  }
+  else { 
+    echo "Erro ao alterar, tente novamente mais tarde!";
+    exit;
+    }
+}
+  function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+  }
+  
+    //LÊ DADOS DO BANCO
+  $le_agenda = DBRead ("agenda", "WHERE id_agenda = '$cod'", "*");
+
+  foreach ($le_agenda as $tr){
+
+?>
+
 		<center>
 			<form action="cadastro_cliente.php" method="post" autocomplete="on">
 				<table border="0" align="center" width="100%"  cellpadding="0" cellspacing="0">
                   <tr height="30">
-					<td align="left" valign="top">
-					 <span style="border-bottom: 1px solid #000142; width: 100%;"><b>Dados Pessoais</b></span>
+					<td align="left" colspan="2">
+					 <div style="border-bottom: 1px solid #000142; width: 99.5%;"><b>Dados Pessoais</b></div>
 					</td>
 				  </tr>
                   <tr>
@@ -23,11 +90,6 @@
 						<input type="text" name="nome" class="contato" placeholder="Nome Completo" required >
 					</td>
 				  </tr>
-                  <tr>
-					<td align="left" valign="top">
-						
-					</td>
-				  </tr>
 				  <tr>
 					<td align="left" valign="top">
                         <input type="text" name="fixo" class="contato fixo" placeholder="Telefone Fixo" style="width: 48%;">
@@ -39,81 +101,53 @@
 					<input type="email" name="email" autocomplete="off" class="contato" placeholder="E-mail" required>
 					</td>
 				  </tr>
-				  <tr>
+                  <tr height="40" valign="top">
+					<td align="left" colspan="2">
+					    <div style="border-bottom: 1px solid #000142; width: 99.5%; margin-top: 10px;"><b>Endereço</b></div>
+					</td>
+				  </tr>
+                  <tr>
 					<td align="left" valign="top">
-					<select name="contato_por" class="contato select" style=" height:45px;">
-					  <option value=" ">Deseja que entremos em contato por:</option>
-					  <option>E-mail</option>
-					  <option>Telefone</option>
-					  <option>SMS</option>
-					  <option>Whatsapp</option>
-				   </select>
+						<input type="text" name="cep" class="contato cep" id="cep" style="width: 30%;" placeholder="CEP" onblur="pesquisacep(this.value);" required>
+                        <span style="font-size:12px; font-size: 14px \9; color:#000000; text-align: left;">*Preenchimento Automatico!</span>
+
 					</td>
 				  </tr>
-				  <tr>
+                  <tr>
 					<td align="left" valign="top">
-					<select name="assunto" class="contato select" style=" height:45px;">
-					  <option value=" ">Assunto:</option>
-					  <option>Orçamento</option>
-					  <option>Trabalhe Conosco</option>
-					  <option>Elogios</option>
-					  <option>Reclama&ccedil;&otilde;es</option>
-					  <option>Sugest&otilde;es</option>
-					  <option>Outros...</option>
-				   </select>
+                        <input type="text" name="rua" class="contato" id="rua" placeholder="Rua" style="width: 48%;">
+					    <input type="text" name="cidade" class="contato" id="cidade" placeholder="Cidade" style="width: 49%;">
 					</td>
 				  </tr>
-				  <tr>
+                  <tr>
 					<td align="left" valign="top">
-					<textarea name="msg" class="msg" style="margin-bottom: 5px;" required onFocus="(this.value == 'Mensagem:') ? this.value = '' : ''" onBlur="if (this.value == '')this.value='Mensagem:';" value="Mensagem:">Mensagem:</textarea>
+                        <input type="text" name="bairro" class="contato" id="bairro" placeholder="Bairro" style="width: 48%;">
+					    <input type="text" name="estado" class="contato" id="estado" placeholder="Estado" maxlength="2" style="width: 49%;">
 					</td>
 				  </tr>
-				  <tr>
+                  <tr>
 					<td align="left" valign="top">
-					<select name="indicacao" class="contato select" style="height:45px;">
-					  <option value=" ">Por onde conheceu o Trio Bagunça?</option>
-					  <option>Facebook</option>
-					  <option>Instagram</option>
-					  <option>Indicação</option>
-					  <option>Google</option>
-					  <option>Panfletos</option>
-					  <option>Site</option>
-					  <option>Outros...</option>
-				   </select>
+						<input type="text" name="complemento" class="contato" placeholder="Complemento">
 					</td>
 				  </tr>
-				  <tr>
+                  <tr height="40" valign="top">
+					<td align="left" colspan="2">
+					 <div style="border-bottom: 1px solid #000142; width: 99.5%; margin-top: 10px;"><b>Login</b></div>
+					</td>
+				  </tr>
+                  <tr>
 					<td align="left" valign="top">
-					<input type="checkbox" name="aceito" value="Gostaria de receber informações sobre serviços e promoções do Trio Bagunça por e-mail, SMS, Facebook e WhatsApp.">
-					<span style="font-size:14px; font-size: 14px \9; padding-bottom: 10px;">Gostaria de receber informações sobre serviços e promoções do Trio Bagunça por e-mail, SMS, Facebook e WhatsApp.<br /><br /></span>
+                        <input type="text" name="login" class="contato" placeholder="Login" style="width: 48%;">
+					    <input type="pass" name="senha" class="contato" placeholder="Senha" maxlength="2" style="width: 49%;">
 					</td>
-				  </tr>
+                  </tr>
 				  <tr>
-					  <td width="206" align="left" valign="middle"> 
-					  <img src="captcha/captcha.php" id="captcha" width="150" height="57" /> 
-					  <a href="#" onclick="document.getElementById('captcha').src='captcha/captcha.php?'+Math.random();
-					document.getElementById('captcha-form').focus();"
-					id="change-image"><img src="img/refresh.png" width="27" height="27"  alt="Atualizar" border="0"/></a>
-						  <input type="text" name="captcha" class="contato captcha" id="captcha-form" autocomplete="off"/> 
-					</td>
-				  </tr>
-				  <tr>
-					<td align="right" valign="middle">
-					<span style="font-size:12px; font-size: 14px \9; color:#F00; text-align: left; float: left;">*Itens nome, telefone e E-mail são obrigatorios!</span>
-					<input type="submit" name="button" class="button" value="Enviar">
+					<td height="70" align="center" valign="middle">
+					<input type="submit" name="button" class="button" value="Cadastrar" style="width: 30%;">
 					</td>
 				  </tr>
 				</table>
 			</form>
-			
-			<div class="texto_rodape" style="width:100%;">
-				<p style="font-size:20px; margin-bottom: 20px;"> 
-				<b>Telefone: </b>
-				<br /> (61) 99181-5767 <img src="img/logo_whatsapp.png" style="width: 22px; margin-left: 5px;"> <img src="img/logo_claro.png" style="width: 20px; margin-left: 5px;"> <br />
-				Orçamento pelo whatsapp
-				<p class="titulo" style="margin-top:24px; font-size: 22px; font-weight: bold;">Atendimento por e-mail </p>
-				<p>triobaguncafesta@gmail.com</p>
-			</div>
 		</center>
 	</div><!--FIM TEXTO-->
 </div><!--FIM CORPO-->
