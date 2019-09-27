@@ -1,4 +1,7 @@
-<?php include "head.php"; ?>
+<?php 
+	session_start();
+	include "head.php"; 
+?>
 <div id="corpo"><!--INICIO CORPO-->
 		<?php
 			require 'processos/config.php';
@@ -23,14 +26,24 @@
         ?>
         <div class="texto">
             <div id="titulos">
-                <?php echo $rd['evento']?>
+				<?php 
+					echo $_SESSION["evento"] = $rd['id_agenda'];
+					echo $rd['evento'];
+				?>
             </div>
             <p><b>Data:</b> <?php echo date('d/m/Y', strtotime($rd['data']));?></p>
             <p><b>Horário:</b> <?php echo $rd['hora']?></p>
+			<?php 
+				if ($rd['valor']) {
+					echo "<p><b>Valor:</b> R$ ".$rd['valor']."</p>";
+				}
+
+				
+			?>
             <p><b>Local:</b> <?php echo $rd['local']?></p>
             <p><?php echo $rd['obs']?></p>
 			<br />
-			<center><button onclick="location.href='login'" class="button" style="width: 30%;"><b>Comprar</b></button></center>
+			<center><button onclick="location.href='LoginCliente?event=<?php echo $idEvent;?>'" class="button" style="width: 30%;"><b>Comprar</b></button></center>
         </div>
         
 		<?php
