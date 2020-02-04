@@ -7,25 +7,8 @@ require "sessao_time.php";
 <head>
 <meta charset="utf-8">
 <title>Documento sem título</title>
-<link href="../css/style.css" type="text/css" rel="stylesheet">
-<script type="text/javascript">
-//get the input and UL list
-var input = document.getElementById('filesToUpload');
-var list = document.getElementById('fileList');
+<link href="css/style.css" type="text/css" rel="stylesheet">
 
-//empty list for now...
-while (list.hasChildNodes()) {
-  list.removeChild(ul.firstChild);
-}
-
-//for every file...
-for (var x = 0; x < input.files.length; x++) {
-  //add to list
-  var li = document.createElement('li');
-  li.innerHTML = 'File ' + (x + 1) + ':  ' + input.files[x].name;
-  list.append(li);
-}
-</script>
 <style type="text/css">
 body {
 	background-color: transparent;
@@ -65,10 +48,7 @@ input[type="submit"] {
   cursor:pointer;
   width:100%;
   border:none;
-  background:#991D57;
-  background-image:linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
-  background-image:-moz-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
-  background-image:-webkit-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
+  background: #99CC33;
   color:#FFF;
   font-weight: bold;
   margin: 20px 0;
@@ -76,9 +56,7 @@ input[type="submit"] {
   border-radius:5px;
 }
 input[type="submit"]:hover {
-  background-image:linear-gradient(bottom, #9C215A 0%, #A82767 52%);
-  background-image:-moz-linear-gradient(bottom, #9C215A 0%, #A82767 52%);
-  background-image:-webkit-linear-gradient(bottom, #9C215A 0%, #A82767 52%);
+  background-color: #6699FF;
   -webkit-transition:background 0.3s ease-in-out;
   -moz-transition:background 0.3s ease-in-out;
   transition:background-color 0.3s ease-in-out;
@@ -180,5 +158,25 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 </div>
 </center>
 </div>
+
 </body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script> 
+<script type="text/javascript">
+    //get the input and UL list
+    var input = document.getElementById('filesToUpload');
+    var list = document.getElementById('fileList');
+
+    //empty list for now...
+    while (list.hasChildNodes()) {
+      list.removeChild(ul.firstChild);
+    }
+
+    //for every file...
+    for (var x = 0; x < input.files.length; x++) {
+      //add to list
+      var li = document.createElement('li');
+      li.innerHTML = 'File ' + (x + 1) + ':  ' + input.files[x].name;
+      list.append(li);
+    }
+</script>
 </html>

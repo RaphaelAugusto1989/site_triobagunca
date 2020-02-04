@@ -5,11 +5,9 @@
 
 'use strict';
 
-;( function ( document, window, index )
-{
+;( function ( document, window, index ) {
 	var inputs = document.querySelectorAll( '.inputfile' );
-	Array.prototype.forEach.call( inputs, function( input )
-	{
+	Array.prototype.forEach.call( inputs, function( input ){
 		var label	 = input.nextElementSibling,
 			labelVal = label.innerHTML;
 
@@ -31,4 +29,4 @@
 		input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
 		input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
 	});
-}( document, window, 0 ));
+} ( document, window, 0 ));

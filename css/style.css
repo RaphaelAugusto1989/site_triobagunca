@@ -384,7 +384,8 @@ value.msg {
 .button{
 	background: #99CC33;
 	padding: 12px 32px;
-	color: #000142;
+	color: #ffffff;
+	font-weight: bold;
 	font-size: 1em;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
