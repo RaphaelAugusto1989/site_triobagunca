@@ -9,63 +9,44 @@
 	require 'processos/connection.php';
 	require 'processos/database.php';
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
-		//RECEBE DADOS DO FORMULARIO
-		$login = test_input($_POST["login"]);
-		$senha = md5(test_input($_POST["senha"]));
+	//RECEBE DADOS DO FORMULARIO
+	$login = test_input($_POST["login"]);
+	$senha = md5(test_input($_POST["senha"]));
 
-		if ($login == "") {
+	if ($login == "") {
 			echo "<script>	alert ('você não digitou o Usuário!')	</script>";
-			echo "<script>javascript:history.back()</script>";
+			echo "<script> location.href = ('login.php') </script>";
+			exit ();
 		}
-
+		
 		if ($senha == "") {
 			echo "<script>	alert ('você não digitou a senha!')	</script>";
-			echo "<script>javascript:history.back()</script>";
+			echo "<script> location.href = ('login.php') </script>";
+			exit ();
 		}
 
-		//LÊ DADOS DO BANCO DE CLIENTES
-		$cliente = DBRead ('clientes', "WHERE email_cli OR login_cli = '$login' AND pass_cli = '$senha'", '*');
+	//LÊ DADOS DO BANCO
+	$user = DBRead ('usuario', "WHERE email_usuario = '$login' OR login_usuario = '$login' AND senha_usuario = '$senha'", 'id_usuario, nome_usuario, login_usuario');
+	
+	// Quantidade de registros pra paginação
+	foreach ($user as $us) {
+		$nome_user = $us["nome_usuario"];
+		$id_usuario = $us["id_usuario"];	
+	}
 
-		//LÊ DADOS DO BANCO DE USUÁRIOS
-		$user = DBRead ('usuario', "WHERE email_usuario OR login_usuario = '$login' AND senha_usuario = '$senha'", '*');
-		
+	if ($user == true) {
+		$_SESSION["time"] = time() + (60 * 1); //1 minuto
+		$_SESSION ["login"] = $login;
+		$_SESSION ["nome"] = $us["nome_usuario"];
+		$_SESSION ["id_user"] = $us["id_usuario"];
 
-		if ($cliente) {
-			foreach ($liente as $cli) {
-				$id_cli = $cli["id_cli"];
-				$nome_cli = $cli["nome_cli"];
-			} //FIM FOREACH
-
-				if ($cliente == true) {
-					$_SESSION["time"] = time() + (60 * 1); //1 minuto
-					$_SESSION["login"] = $login;
-					$_SESSION["id_user"] = $id_cli;
-					$_SESSION["nome"] = $nome_cli;
-
-					echo "<script>location.href=('sistema')</script>";
-				} else { 
-					echo "<center><b style='color: #B50003; position: absolute; top: 20%; left: 43%;'>Falha na Autenticação, <br />Login ou Senha Incorretos!</b> <br /><br /><br /></center>";	
-				}
-			
-		} else {
-			foreach ($user as $us) {
-				$nome_user = $us["nome_usuario"];
-				$id_usuario = $us["id_usuario"];
-			} //FIM FOREACH
-				if ($user == true) {
-					$_SESSION["time"] = time() + (60 * 1); //1 minuto
-					$_SESSION["login"] = $login;
-					$_SESSION["nome"] = $us["nome_usuario"];
-					$_SESSION["id_user"] = $us["id_usuario"];
-					echo "<script>location.href=('sistema')</script>";
-				} else { 
-					echo "<center><b style='color: #B50003; position: absolute; top: 20%; left: 43%;'>Falha na Autenticação, <br />Login ou Senha Incorretos!</b> <br /><br /><br /></center>";	
-				}
-		}//FIM ELSE ClIENTE
-	}// FIM IF POST
-
+		echo "<script>location.href=('sistema')</script>";
+	} else { 
+		$msgError = "<p class='msgerro'>Falha na Autenticação, <br />Login ou Senha Incorretos!</p>";	
+	}
+}
 	function test_input($data) {
    		$data = trim($data);
    		$data = stripslashes($data);
@@ -79,7 +60,9 @@
   <tbody>
   	<tr>
       <td height="95" align="center" valign="top">
-      	<img src="img/logo-trio.png" style="width: 90%;">
+	  <img src="img/logo-trio.png" style="width: 50%;">
+      	<p><b>ÁREA DO COLABORADOR</b></p>
+        <?= $msgError; ?>
       </td>
     </tr>
     <tr>

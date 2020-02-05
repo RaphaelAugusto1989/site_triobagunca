@@ -24,11 +24,11 @@ body {
 <body>
 <div id="container">
 <?php
-  require '../processos/config.php';
-  require '../processos/connection.php';
-  require '../processos/database.php';
+require '../processos/config.php';
+require '../processos/connection.php';
+require '../processos/database.php';
 
-  $cod = $_GET["id"];
+$cod = $_SESSION["id_user"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <table width="80%" border="0" cellspacing="3" cellpadding="0">
   <tbody>
     <tr>
-      <td height="67" align="CENTER" colspan="2">ALTERA USUÁRIO</td>
+      <td height="67" align="CENTER" colspan="2">MEUS DADOS</td>
     </tr>
     <tr>
       <td width="133">CPF: <br />
