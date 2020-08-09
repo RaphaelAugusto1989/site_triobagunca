@@ -38,6 +38,51 @@ body {
 	float: left;
 	margin-top:  10px;
 }
+
+ul.espaco_cliente {
+	list-style-type: none;
+	cursor: default;
+	width: 150px;
+	margin: 0px;
+	margin-right: 50px;
+	padding: 5px;
+	padding-bottom: 10px;
+	float: right;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-top: 0;
+	border-radius: 0 0 7px 7px;	
+}
+
+li.espaco_cliente {
+	display: block;
+	list-style: none;
+	width: 200px;
+	padding-top: 8px;
+	text-decoration: none;
+	color: #C60;
+	float: right;
+	font-size: 12px;
+	}
+ul.espaco_cliente a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+ul.espaco_cliente a:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #00D7E1;
+}
+
+.espaco_cliente_phone {
+	display: none;
+}
+
+.msgerro {
+	color: #B50003; 
+	font-weight: bold;
+}
+
 /*FIM TOPO*/
 /*INICIO MENU*/
 #menu {
@@ -238,15 +283,35 @@ label[for="bt_menu"]{
 }
 
 .foto_recado {
-	width: 46%;
+	width: 46.5%;
+  	height: 23px;
 	border: 1px solid hsla(0,0%,63%,1.00); 
-	border-radius: 5px 5px 5px 5px; 
-	padding: 9px; 
+	border-radius: 5px; 
+	padding: 8px 8px 8px 0;  
 	background-color: #FFFFFF; 
 	font-size: 16px; 
 	margin-left: 10px;
 	float: left;
 	color: #000000;
+}
+
+input[type='file'] {
+	display: none
+}
+  
+.uploadBtn {
+  padding: 10px 14px;
+  border-radius: 4px;
+  background-color: #6699FF;
+  color: #ffffff;  
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.uploadfile {
+  width: 62%;
+  border: 0;
+  background-color: #FFFFFF;
 }
 
 #corpo p {
@@ -332,13 +397,14 @@ label[for="bt_menu"]{
 }
 
 .texto {
-	width: auto;
+	width: 1100px;
 	padding: 15px;
 	margin: 10px;
 	background-color: hsla(0,0%,100%,0.31);
 	color :#000142;
 	text-align: justify;
 	border-radius: 10px;
+	display: table;
 }
 
 /*FORMULARIO DE CONTATO*/
@@ -362,8 +428,12 @@ label[for="bt_menu"]{
 	font-size: 16px;
 }
 
+.metadecontato {
+	width: 48.5%;
+}
+
 .select {
-		width: 100%;
+		width: 99.5%;
 }
 
 .msg {
@@ -381,27 +451,97 @@ value.msg {
 	color: hsla(359,100%,45%,1.00); 
 }
 
-.button{
-	background: #99CC33;
-	padding: 12px 32px;
+.btnAdd {
+	background: #065580;
+	padding: 8px 10px;
 	color: #ffffff;
-	font-weight: bold;
+	font-size: 0.7em;
+	transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	-webkit-appearance:none;
+	text-decoration: none;
+}
+
+.btnAdd:hover{
+	background-color: #99CC33;
+	color: #065580;
+}
+
+.btnRemove {
+	background: #CD0000;
+	padding: 8px 10px;
+	color: #ffffff;
+	font-size: 0.7em;
+	transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	-webkit-appearance:none;
+	text-decoration: none;
+}
+
+.btnRemove:hover{
+	background-color: rgb(59, 1, 1);
+}
+
+
+.button {
+	background: #99CC33;
+	padding: 12px 40px;
+	color: #000142;
 	font-size: 1em;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
 	-webkit-transition: 0.5s ease;
 	text-transform: uppercase;
-	border:none;
+	border: none;
+	border-radius: 5px;
 	outline: none;
 	cursor: pointer;
 	-webkit-appearance:none;
 }
+
 .button:hover{
 	background-color: #6699FF;
 }
 
 .button:active{
 	background-color: #6699FF; 
+}
+
+.button_compra {
+	width: 30%
+}
+
+#divCarregando {
+	position: absolute;
+	z-index: 200;
+	width: 100%;
+	height: 100%;
+	background: #0018a044;
+	-webkit-animation: spin 2s linear infinite;
+  	animation: spin 2s linear infinite;
+	text-align: center;
+	padding-top: 10%;
+}
+
+#divCarregando.img {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left:-155px;
+	margin-top:-75px;
+	margin-top: 10%;
 }
 
 .captcha {
@@ -449,7 +589,7 @@ value.msg {
 	text-align: center;
 }
 
-/*INIVIO EFEITO DA IMAGEM DA NOTICIAS*/
+/*INICIO EFEITO DA IMAGEM DA NOTICIAS*/
 .hoverzoom {
 	width: 200px;
 	height: 200px;
@@ -543,6 +683,33 @@ value.msg {
     opacity: 1;
 }
 
+.capa_evento {
+	width: 250px;
+	height: 250px;
+	padding: 10px;
+	border-radius: 10px;
+	float: left;
+}
+
+.capa_evento > img {
+	width: 100%;
+	border-radius: 10px;
+	float: left;
+}
+
+.capa_evento:hover {
+	background-color: #99CC33;
+	transition: 0.5s ease;
+	-o-transition: 1.0s ease;
+	-webkit-transition: 1.0s ease;
+}
+
+.foto_evento {
+	width: 23%;
+	float: right;
+	margin-right: 20px;
+}
+
 /*FIM EFEITO DA IMAGEM DA NOTICIAS*/
 
 .sociais {
@@ -562,7 +729,7 @@ value.msg {
 /*INICIO RODAPÉ*/
 #rodape {
 	width: 100%;
-	height: 250px;
+	height: 270px;
 	background-color: #065580; 
 	float:left;
 }
@@ -603,15 +770,14 @@ value.msg {
 }
 
 .sociais {
-	width: 15%;
+	width: 13%;
 	padding: 0 10px 10px 0;
 }
 
 #fones {
 	width: 100%;
-	font-size: 18px;
+	font-size: 14px;
 	float: right;
-	font-weight: bold;
 }
 
 #artspeck {
@@ -908,4 +1074,30 @@ li.logoff a:hover {
 .event :hover {
 	text-decoration: underline;
 }
+
+.btn_remov a {
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	margin: 10px;
+	background-color: #E30003;
+	color: #ffffff;
+}
 /*FIM PAGINA EVENTOS*/
+
+ul.print {
+	list-style: none;
+	width: auto;
+	float: right;
+	margin-bottom: 30px;
+}
+
+li.print {
+	display: block;
+	list-style: none;
+}
+
+ul.print a {
+	text-decoration: none;
+	color: #000000;
+}
