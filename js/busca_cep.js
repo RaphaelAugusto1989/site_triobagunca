@@ -2,7 +2,7 @@ jQuery(function($){
    $("#cep").change(function(){
       var cep_code = $(this).val();
       if( cep_code.length <= 0 ) return;
-      $.get("http://apps.widenet.com.br/busca-cep/api/cep.json", { code: cep_code },
+      $.get("https://apps.widenet.com.br/busca-cep/api/cep.json", { code: cep_code },
          function(result){
             if( result.status!=1 ){
                alert(result.message || "Houve um erro desconhecido");
@@ -12,7 +12,7 @@ jQuery(function($){
             $("input#estado").val( result.state );
             $("input#cidade").val( result.city );
             $("input#bairro").val( result.district );
-            $("input#rua").val( result.address );
+            $("input#endereco").val( result.address );
             $("input#estado").val( result.state );
          });
    });

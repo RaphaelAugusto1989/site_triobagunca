@@ -1,6 +1,6 @@
 <?php  
-session_start();
-require "sessao_time.php"; 
+  session_start();
+  require "sessao_time.php"; 
 ?>
 <!doctype html>
 <html>
@@ -8,6 +8,14 @@ require "sessao_time.php";
 <meta charset="utf-8">
 <title>Documento sem título</title>
 <link href="../css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript">
+		$(window).load(function(){
+			setTimeout(function(){
+				$("#divCarregando").fadeOut("slow");		
+			})
+		});
+</script>
 <style>
 body {
 	background-color: transparent;
@@ -98,8 +106,10 @@ $grava = DBCreate('servicos', $servico);
       </td>
     </tr>
     <tr>
-      <td height="46">Fotos:
-      <input type="file" name="imagem" style="width: 99%;">
+      <td height="46">Fotos: <br />
+          <label for='uploadBtn' class="uploadBtn">Selecionar Foto:</label>
+					<input type="file" name="imagem" class="foto_recado_file" id="uploadBtn" >
+					<input id="uploadFile" disabled="disabled" class="uploadfile contato" style="width: 78%;"/> 
       </td>
     </tr>
     <tr>
@@ -112,5 +122,10 @@ $grava = DBCreate('servicos', $servico);
 </center>
 </form>
 </div>
+<script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function () {
+      document.getElementById("uploadFile").value = this.value;
+    };
+</script>
 </body>
 </html>

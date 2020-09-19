@@ -24,8 +24,8 @@
 				  </tr>
 				  <tr>
 					<td align="left" valign="top">
-					<select name="contato_por" class="contato select" style=" height:45px;">
-					  <option value=" ">Deseja que entremos em contato por:</option>
+					<select name="contato_por" class="contato select" style="height:45px;">
+					  <option disabled selected>Deseja que entremos em contato por:</option>
 					  <option>E-mail</option>
 					  <option>Telefone</option>
 					  <option>SMS</option>
@@ -36,7 +36,7 @@
 				  <tr>
 					<td align="left" valign="top">
 					<select name="assunto" class="contato select" style=" height:45px;">
-					  <option value=" ">Assunto:</option>
+					  <option disabled selected>Assunto:</option>
 					  <option>Orçamento</option>
 					  <option>Trabalhe Conosco</option>
 					  <option>Elogios</option>
@@ -54,7 +54,7 @@
 				  <tr>
 					<td align="left" valign="top">
 					<select name="indicacao" class="contato select" style="height:45px;">
-					  <option value=" ">Por onde conheceu o Trio Bagunça?</option>
+					  <option disabled selected>Por onde conheceu o Trio Bagunça?</option>
 					  <option>Facebook</option>
 					  <option>Instagram</option>
 					  <option>Indicação</option>
@@ -91,8 +91,8 @@
 			
 			<div class="texto_rodape" style="width:100%;">
 				<p style="font-size:20px; margin-bottom: 20px;"> 
-				<b>Telefone: </b>
-				<br /> (61) 99181-5767 <img src="img/logo_whatsapp.png" style="width: 22px; margin-left: 5px;"> <img src="img/logo_claro.png" style="width: 20px; margin-left: 5px;"> <br />
+				<b>Telefones: </b>
+				<br /> (61) 3797-8080 / 99181-5767 <img src="img/logo_whatsapp.png" style="width: 22px; margin-left: 5px;"> <br />
 				Orçamento pelo whatsapp
 				<p class="titulo" style="margin-top:24px; font-size: 22px; font-weight: bold;">Atendimento por e-mail </p>
 				<p>triobaguncafesta@gmail.com</p>

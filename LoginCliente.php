@@ -29,7 +29,7 @@
 		}
 
 		//LÊ DADOS DO BANCO DE CLIENTES
-		$cliente = DBRead ('clientes', "WHERE email_cli OR login_cli = '$login' AND pass_cli = '$senha'", '*');
+		$cliente = DBRead ('clientes', "WHERE email_cli = '$login' OR login_cli = '$login' AND pass_cli = '$senha'", '*');
 
 			foreach ($cliente as $cli) {
 				$id_cli = $cli["id_cli"];
@@ -45,7 +45,7 @@
 					//echo "<script> var id = '.$idEvent.';</script>";
 					echo "<script>location.href=('EspacoCliente')</script>";
 				} else { 
-					echo "<center><b style='color: #B50003; position: absolute; top: 20%; left: 43%;'>Falha na Autenticação, <br />Login ou Senha Incorretos!</b> <br /><br /><br /></center>";	
+					$msgError = "<p class='msgerro'>Falha na Autenticação, Login ou Senha Incorretos!</p>";	
 				}
 	}// FIM IF POST
 
@@ -62,7 +62,9 @@
   <tbody>
   	<tr>
       <td height="95" colspan="2" align="center" valign="top">
-      	<img src="img/logo-trio.png" style="width: 70%;">
+	  <img src="img/logo-trio.png" style="width: 50%;">
+      	<p><b>ÁREA DO CLIENTE</b></p>
+        <?= $msgError; ?>
       </td>
     </tr>
     <tr>

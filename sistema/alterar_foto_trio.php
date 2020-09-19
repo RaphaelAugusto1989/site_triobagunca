@@ -95,8 +95,11 @@ if($arquivo1["name"] != "") {
     </tr>
     <tr>
       <td valign="top">Foto: <?php echo $tr['foto'];?><br />
-      <input type="hidden" name="nomefoto" value="<?php echo $tr['foto']; ?>">
-      <input type="file" name="foto" style="width: 99%;">
+        <input type="hidden" name="nomefoto" value="<?php echo $tr['foto']; ?>">
+        <label for='uploadBtn' class="uploadBtn">Selecionar Foto</label>
+        <input type="file" name="foto" class="foto_recado_file" id="uploadBtn" >
+        <input id="uploadFile" disabled="disabled" class="uploadfile contato" style="width: 80%;"/>
+        <br />
       </td>
     </tr>
     <tr>
@@ -112,6 +115,11 @@ if($arquivo1["name"] != "") {
 </div>
 <?php
   }
-  ?>
+?>
+<script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+      document.getElementById("uploadFile").value = this.value;
+  };
+</script>
 </body>
 </html>

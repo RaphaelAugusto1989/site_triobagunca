@@ -163,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="inicio" class="contato hora" maxlength="5" placeholder="00:00" style="width: 93%;" value="<?php echo $rd['hora_inicio']; ?>" require>
         </td>
         <td height="46">Hora Término do Evento:<br />
-            <input type="text" name="termino" class="contato hora" maxlength="5" placeholder="00:00" style="width: 93%;" value="<?php echo $rd['hora_termino']; ?>" require>
+            <input type="text" name="termino" class="contato hora" maxlength="5" placeholder="00:00" style="width: 93%;" alue="<?php echo $rd['hora_termino']; ?>" require>
         </td>
     </tr>
     <tr>

@@ -63,15 +63,10 @@ $le_agenda = DBRead ("agenda", "WHERE id_agenda = '$cod'", "*");
         <tr>
             <td width="auto"><b>Data:</b></td>
             <td width="40%">
-                <?php
-                    $date = explode('-', $rd['data_inicio']);
-                    echo $data = $date[2].'/'.$date[1].'/'.$date[0];
-                  
-                    if($rd['data_final'] != '0000-00-00') {
-                        $datef = explode('-', $rd['data_final']);
-                        echo ' à '.$dataFinal = $datef[2].'/'.$datef[1].'/'.$datef[0];
-                    }
-                ?>
+            <?php 
+                $date = explode('-', $rd['data']);
+                echo  $date[2].'/'.$date[1].'/'.$date[0]; $rd['data']; 
+            ?>
             </td>
             <td width="auto"><b>Início:</b></td>
             <td width="30%"><?php echo $rd['hora_inicio']; ?></td>

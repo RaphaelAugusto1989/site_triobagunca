@@ -2,6 +2,12 @@
 <div id="corpo"><!--INICIO CORPO-->
 	<div class="texto">
 		<div id="titulos"> ESPAÇO BAGUNÇA</div>
+		<p>O Espaço Bagunça é o espaço criativo da equipe de animação infantil Trio Bagunça.</p>
+		<p>O Trio Bagunça atua em todo o DF com animação, personagens vivos, pintura de rosto e vários outros serviços, porém, faltava um lugar próprio para desenvolver sua nova proposta de entretenimento infantil.
+		Localizado no Metrópole Shopping, Águas Claras, juntamente com a nossa central de atendimento, o Espaço Bagunça oferece aos pequenos e sua família, a segurança de um shopping muito bem localizado com estacionamento grátis é um mix de lojas conhecidas. O espaço de diversão é exclusivo para as crianças, todo adaptado com forração própria, banheiro privativo dentro da loja, de uso restrito aos pequeninos, inclusive com fraldário, sistema inteligente de energia elétrica antichoque, cozinha completa para refeições quando proposto, estrutura de cinema kids, circuito de câmeras para que os responsáveis acompanhem o andamento e equipe de recreadores com padrão Trio Bagunça de animação, habilitados para atuar com crianças do espectro autista, a única equipe de Brasília certificada para tal.
+		Tudo isso e muito mais, só aqui no Espaço Bagunça.</p>
+		<p>Adquira no conforto de sua casa o ingresso de seus pequenos, é muito simples, basta escolher a atividade preferida, escolher a data e hora, efetuar o cadastro e realizar o pagamento. Pronto! </p>
+		<p>Ti esperamos lá!</p>
 		<?php
 			require 'processos/config.php';
 			require 'processos/connection.php';
@@ -17,81 +23,43 @@
 			$countTotal = count($sql);// Quantidade de registros pra paginação
 
 			//LÊ DADOS DO BANCO
-			$agenda = DBRead ("agenda", "WHERE local = 'Espaço Bagunça' ORDER BY data ASC LIMIT $inicial, $numreg", "*");
+			$agenda = DBRead ("agenda", "WHERE local = 'Espaço Bagunça' AND status = '1' ORDER BY data DESC LIMIT $inicial, $numreg", "*");
 
-			/*
-			foreach ($agenda as $rd) {
-				echo $DataHoje = date('Ymd').'<br>';
-				echo $dataEvento = str_replace("-","",$rd['data']);
-				if ($dataEvento >= $DataHoje) {
-					$temEvento = false;
-					if ($temEvento == false) {
-						echo "Não tem evento!";
-					} else
-			*/
+			$diretorio = 'img/eventos';
 
 			if(!empty($agenda)) {
-				$DataHoje = date("Ymd");
+				//$DataHoje = date("Ymd");
 				$temEvento = false;
 				foreach($agenda as $rd) {
-					if(str_replace("-","",$rd['data']) >= $DataHoje) {		
+					//if(str_replace("-","",$rd['data']) >= $DataHoje) {
+						if (empty($rd['capa_evento'])) {
 		?>
-		<a href="evento_detalhe.php?id=<?php echo $rd['id_agenda'];?>" class="event">
-			<table width="100%" align="center" border="0" cellspacing="2" cellpadding="2" id="table_recados">
-				<tbody>
-					<tr>
-						<td></td>
-						<td width="15%" align="center"><b>Data</b></td>
-						<td></td>
-						<td width="15%" align="center"><b>Horário</b></td>
-						<td style="padding-left: 30px;"><b>Evento</b></td>
-					</tr>
-					<tr>
-					    <td width="3%"></td>
-						<td align="center" valign="middle" class="borda"> 
-							<div class="dia">
-								<?php 
-									$date = explode('-', $rd['data']);
-									echo $date[2]; 
-								?>
-							</div>
-							<div class="mesanos">
-								<?php
-									echo $date[1].'/'.$date[0];
-								?>
-							</div>
-						</td>
-						<td width="5%" align="center" valign="middle">
-						ás 
-						</td>
-						<td width="15%" align="center" valign="middle" class="borda">
-							<div class="dia">
-								<?php 
-									$hr = explode(':', $rd['hora']);
-									echo $hr[0].'h'; 
-								?>
-							</div>
-							<div class="mesanos">
-								<?php
-									echo $hr[1];
-								?>
-							</div>
-						</td>
-						<td valign="top">
-							<div class="titevent">
-							<?php echo $rd['evento'] ?>
-							</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</a>
+							<a href="evento_detalhe.php?id=<?php echo $rd['id_agenda'];?>" class="event">
+								<div class="capa_evento">
+									<?php 
+										$date = explode('-', $rd['data']);
+										echo '<b><center>'.$rd['evento'].'</center></b><br />';
+										echo 'Data: '.$date[2].'/'.$date[1].'/'.$date[0].'<br />';
+										echo 'Início: '.$rd['hora_inicio'].'<br />';
+										echo 'Final: '.$rd['hora_termino'].'<br />';
+									?>
+								</div>
+							</a>
+					<?php	
+						} else {
+					?>
+							<a href="evento_detalhe.php?id=<?php echo $rd['id_agenda'];?>" class="event">
+								<div class="capa_evento">
+									<img src="<?php echo $diretorio.'/'.$rd['capa_evento']; ?>">
+								</div>
+							</a>
 		<?php
-					}
+						}
+					//}
 				}
 			}	
 
-			if ($temEvento == false) {
+			if (empty($agenda)) {
 				echo '<center>Infelizmente não temos eventos cadastrados no momento!</center>';
 			}
 		?>

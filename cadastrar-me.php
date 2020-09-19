@@ -18,11 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $cpf	        = test_input($_POST["cpf"]);
   $nascimento 	= date('Y-m-d', strtotime(test_input($_POST["nascimento"])));
   $nome 	    = test_input($_POST["nome"]);
+  $parentesco   = test_input($_POST["parentesco"]);
   $fixo 	    = test_input($_POST["fixo"]);
   $celular 	    = test_input($_POST["celular"]);
   $email 		= test_input($_POST["email"]);
   $cep 	        = test_input($_POST["cep"]);
   $rua	        = test_input($_POST["rua"]);
+  $num	        = test_input($_POST["numero"]);
   $cidade 	    = test_input($_POST["cidade"]);
   $bairro 	    = test_input($_POST["bairro"]);
   $estado 	    = test_input($_POST["estado"]);
@@ -51,12 +53,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$cliente = array (
 				'cpf_cli' => $cpf,
 				'nome_cli' => $nome,
+				'parentesco_cli' => $parentesco,
 				'nasc_cli' => $nascimento,
 				'fixo_cli' => $fixo,
 				'cel_cli' => $celular,
 				'email_cli' => $email,
 				'cep_cli' => $cep,
 				'rua_cli' => $rua,
+				'num_cli' => $num,
 				'cidade_cli' => $cidade,
 				'bairro_cli' => $bairro,
 				'estado_cli' => $estado,
@@ -74,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			if ($save) {
 				echo "<script> alert('Você foi cadastrado com sucesso!') </script>";
-				echo "<script>location.href=('login')</script>";
+				echo "<script>location.href=('LoginCliente')</script>";
 			} else { 
 				echo "Erro ao se cadastrar, tente novamente mais tarde!";
 				exit;
@@ -94,24 +98,30 @@ function test_input($data) {
 				<table border="0" align="center" width="100%"  cellpadding="0" cellspacing="0">
                   <tr height="30">
 					<td align="left" colspan="2">
-					 <div style="border-bottom: 1px solid #000142; width: 99.5%;"><b>Dados Pessoais</b></div>
+					 <div style="border-bottom: 1px solid #000142; width: 99.5%;"><b>Dados do Responsável</b></div>
 					</td>
 				  </tr>
                   <tr>
 					<td align="left" valign="top">
-						<input type="text" name="cpf" class="contato cpf" maxlength="14" style="width: 48%;" placeholder="CPF" required>
-                        <input type="text" name="nascimento" class="contato data" style="width: 49%;" placeholder="Data de Nascimento" required >
+						<input type="text" name="cpf" class="metadecontato contato cpf" maxlength="14" placeholder="CPF" required>
+                        <input type="text" name="nascimento" class="metadecontato contato data" placeholder="Data de Nascimento" required >
 					</td>
-				  </tr>
                   <tr>
 					<td align="left" valign="top">
 						<input type="text" name="nome" class="contato" placeholder="Nome Completo do Responsável" required >
+						<select name="parentesco" class="metadecontato contato select" style="height:45px;">
+							<option disabled selected>Tipo de parentesco com a criança</option>
+							<option value="M">Mãe</option>
+							<option value="P">Pai</option>
+							<option value="O">Outro Familiar</option>
+						</select>
 					</td>
+				  </tr>
 				  </tr>
 				  <tr>
 					<td align="left" valign="top">
-                        <input type="text" name="fixo" class="contato fixo" placeholder="Telefone Fixo" style="width: 48%;">
-					    <input type="text" name="celular" class="contato cel" placeholder="Celular" style="width: 49%;" required>
+                        <input type="text" name="fixo" class="metadecontato contato fixo" placeholder="Telefone Fixo">
+					    <input type="text" name="celular" class="metadecontato contato cel" placeholder="Celular" required>
 					</td>
 				  </tr>
 				  <tr>
@@ -126,21 +136,22 @@ function test_input($data) {
 				  </tr>
                   <tr>
 					<td align="left" valign="top">
-						<input type="text" name="cep" class="contato cep" id="cep" style="width: 30%;" placeholder="CEP" onblur="pesquisacep(this.value);" required>
+						<input type="text" name="cep" class="metadecontato contato cep" id="cep" placeholder="CEP"  onblur="pesquisacep(this.value);" required>
                         <span style="font-size:12px; font-size: 14px \9; color:#000000; text-align: left;">*Preenchimento Automatico!</span>
 
 					</td>
 				  </tr>
                   <tr>
 					<td align="left" valign="top">
-                        <input type="text" name="rua" class="contato" id="rua" placeholder="Rua" style="width: 48%;">
-					    <input type="text" name="cidade" class="contato" id="cidade" placeholder="Cidade" style="width: 49%;">
+                        <input type="text" name="rua" class="metadecontato contato" id="endereco" placeholder="Rua">
+						<input type="text" name="numero" class="contato" id="num" placeholder="Nº" onkeypress='return SomenteNumero(event)'  style="width: 7%">
+					    <input type="text" name="cidade" class="metadecontato contato" id="cidade" placeholder="Cidade"  style="width: 40%">
 					</td>
 				  </tr>
                   <tr>
 					<td align="left" valign="top">
-                        <input type="text" name="bairro" class="contato" id="bairro" placeholder="Bairro" style="width: 48%;">
-					    <input type="text" name="estado" class="contato" id="estado" placeholder="Estado" maxlength="2" style="width: 49%;">
+                        <input type="text" name="bairro" class="metadecontato contato" id="bairro" placeholder="Bairro" >
+					    <input type="text" name="estado" class="metadecontato contato" id="estado" placeholder="Estado" maxlength="2">
 					</td>
 				  </tr>
                   <tr>
@@ -155,13 +166,13 @@ function test_input($data) {
 				  </tr>
                   <tr>
 					<td align="left" valign="top">
-                        <input type="text" name="login" class="contato" placeholder="Login" style="width: 48%;" required>
-					    <input type="password" name="senha" class="contato" placeholder="Senha" style="width: 49%;" required>
+                        <input type="text" name="login" class="metadecontato contato" placeholder="Login" required>
+					    <input type="password" name="senha" class="metadecontato contato" placeholder="Senha" required>
 					</td>
                   </tr>
 				  <tr>
 					<td height="70" align="center" valign="middle">
-					<input type="submit" name="button" class="button" value="Cadastrar" style="width: 30%;">
+					<input type="submit" name="button" class="button button_compra" value="Cadastrar">
 					</td>
 				  </tr>
 				</table>

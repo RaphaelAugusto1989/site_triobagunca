@@ -123,8 +123,11 @@ if($arquivo1["name"] != "")
       </td>
     </tr>
     <tr>
-      <td height="46">Fotos:
-      <input type="file" name="imagem" style="width: 99%;">
+      <td height="46">Fotos:<br />
+        <label for='uploadBtn' class="uploadBtn">Selecionar Foto</label>
+        <input type="file" name="imagem" class="foto_recado_file" id="uploadBtn" >
+        <input id="uploadFile" disabled="disabled" class="uploadfile contato" style="width: 80%;"/>
+        <br />
       </td>
     </tr>
     <tr>
@@ -137,5 +140,10 @@ if($arquivo1["name"] != "")
 </center>
 </form>
 </div>
+<script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function () {
+        document.getElementById("uploadFile").value = this.value;
+    };
+</script>
 </body>
 </html>

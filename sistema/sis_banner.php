@@ -12,7 +12,7 @@
 			background-color: transparent;
 		}
 	</style>
-	<script type="text/javascript" src="./../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
 	<script type="text/javascript">
 		$(window).load(function(){
 			setTimeout(function(){
@@ -109,10 +109,11 @@
 			</tr>
 			<tr>
 				<td>
-				<label for="file">Banner:</label>
-				<br />
-				<input type="file" name="banner" style="width: 99%;">
-				<span style="font-size: 12px;">*Tamanho recomendavel para o banner: 1286x300</span>
+				<label for="file" style="margin-botton: 10px"><p>Banner:</p></label><br />
+				<label for='uploadBtn' class="uploadBtn">Selecionar Foto</label>
+					<input type="file" name="banner" class="foto_recado_file" id="uploadBtn" >
+					<input id="uploadFile" disabled="disabled" class="uploadfile contato" style="width: 80%;"/> 
+					<p style="font-size: 12px; margin-top: 20px">*Tamanho recomendavel para o banner: 1286x300</p>
 				</td>
 			</tr>
 			<tr>
@@ -132,5 +133,10 @@
 </form>
 </center>
 </div>
+<script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function () {
+        document.getElementById("uploadFile").value = this.value;
+    };
+</script>
 </body>
 </html>

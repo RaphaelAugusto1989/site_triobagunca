@@ -19,13 +19,10 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
-	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>  -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script> 
 	<script type="text/javascript" src="js/script_conteudo.js"></script>
-	<script src="js/custom-file-input.js" type="text/javascript"></script>
 </head>
 <body onload="startTime()">
 <div id="cabecalho">
@@ -84,7 +81,7 @@
 				 <li><a href="visualizar_eventos.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Visualizar Eventos</a></li>
 		      </ul>
 		   </li>
-		   <!-- <li class='active has-sub'><a href='#'><span>Clientes</span></a>
+		   <li class='active has-sub'><a href='#'><span>Clientes</span></a>
 		   	  <ul>
 		         <li><a href="sis_cliente.php" target="frame"><i class="fa fa-user-plus" aria-hidden="true"></i>Cadastrar Cliente</a></li>
 		         <li><a href="visualizar_clientes.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Visualizar Clientes</a></li>
@@ -95,7 +92,7 @@
 		         <li><a href="sis_parceiro.php" target="frame"><i class="fa fa-user-plus" aria-hidden="true"></i>Cadastrar Indicações</a></li>
 		         <li><a href="visualizar_parceiros.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Visualizar Indicações</a></li>
 		      </ul>
-		   </li> -->
+		   </li>
 		   <li class='active has-sub'><a href='#'><span>Galeria de Fotos</span></a>
 		      <ul>
 		         <li><a href="sis_galeria.php" target="frame"><i class="fa fa-camera" aria-hidden="true"></i> Cadastrar Fotos</a></li>
@@ -148,22 +145,5 @@
     }
     return i;
   }
-
-   //get the input and UL list
-   var input = document.getElementById('filesToUpload');
-    var list = document.getElementById('fileList');
-
-    //empty list for now...
-    while (list.hasChildNodes()) {
-      list.removeChild(ul.firstChild);
-    }
-
-    //for every file...
-    for (var x = 0; x < input.files.length; x++) {
-      //add to list
-      var li = document.createElement('li');
-      li.innerHTML = 'File ' + (x + 1) + ':  ' + input.files[x].name;
-      list.append(li);
-    }
 </script> 
 </html>

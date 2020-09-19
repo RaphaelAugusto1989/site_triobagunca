@@ -45,14 +45,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $dateInicio = explode('/', test_input($_POST["data_inicio"])); 
   $dateFinal = explode('/', test_input($_POST["data_final"])); 
   $valor = number_format(test_input($_POST["valor"]), 2, '.', ',');
+  echo '<br>';
+  echo 'hoje: ' .$dataHoje = date('Y-m-d'); echo '<br>';
 
-  $dataHoje = date('Y-m-d');
   $titulo_evento = test_input($_POST["titulo"]);
-  $data_inicio = $dateInicio[2].'-'.$dateInicio[1].'-'.$dateInicio[0];
-  $data_final = $dateFinal[2].'-'.$dateFinal[1].'-'.$dateFinal[0];
+  echo 'INICIO: ' .$data_inicio = $dateInicio[2].'-'.$dateInicio[1].'-'.$dateInicio[0];
+  echo '<br>';
+  echo 'FINAL: ' .$data_final = $dateFinal[2].'-'.$dateFinal[1].'-'.$dateFinal[0];
 
   if ($data_final == '--') {
-    $data_final = "0000-00-00"; 
+    echo 'FINAL: ' .$data_final = "0000-00-00"; 
   }
 
   $hora_inicio = test_input($_POST["inicio"]);
@@ -67,23 +69,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $CreateUser = $_SESSION["id_user"];
   $CreateDate = date('Y-m-d H:i:s');
 
-  // if ($data_inicio <= $dataHoje) {
-  //   echo "<script> alert('Data Inicio menor ou igual ao dia do cadastramento do evento!') </script>";
-  //   echo "<script>location.href=('sis_evento.php')</script>";
-  //   exit;
-  // } 
+  if ($data_inicio <= $dataHoje) {
+    echo "<script> alert('Data Inicio menor ou igual ao dia do cadastramento do evento!') </script>";
+    echo "<script>location.href=('sis_evento.php')</script>";
+    exit;
+  } 
 
-  // if ($data_final != '0000-00-00') {
-  //   if ($data_final <= $dataHoje) {
-  //     echo "<script> alert('Data Final menor ou igual ao dia do cadastramento do evento!') </script>";
-  //     echo "<script>location.href=('sis_evento.php')</script>";
-  //     exit;
-  //   } else if ($data_final <= $data_inicio) {
-  //     echo "<script> alert('Data Final menor ou igual a data de Inicio do evento!') </script>";
-  //     echo "<script>location.href=('sis_evento.php')</script>";
-  //     exit;
-  //   }
-  // }
+  if ($data_final != '0000-00-00') {
+    if ($data_final <= $dataHoje) {
+      echo "<script> alert('Data Final menor ou igual ao dia do cadastramento do evento!') </script>";
+      echo "<script>location.href=('sis_evento.php')</script>";
+      exit;
+    } else if ($data_final <= $data_inicio) {
+      echo "<script> alert('Data Final menor ou igual a data de Inicio do evento!') </script>";
+      echo "<script>location.href=('sis_evento.php')</script>";
+      exit;
+    }
+  }
 
   $diretorio = '../img/eventos/';
 			if(!is_dir($diretorio)){

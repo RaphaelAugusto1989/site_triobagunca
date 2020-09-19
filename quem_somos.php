@@ -21,7 +21,7 @@
 			Trio está associado ao número 3, ou seja, os 3 sócio-criadores da empresa, mas Trio também pode lembrar aquele enorme caminhão de som que leva alegria por onde passa, com diversas pessoas dentro, em cima e ao redor dele... Não teria um nome mais perfeito do que Trio Bagunça para a nossa empresa, afinal, qual criança não gosta de bagunça?
 		</p>
 		<p>
-			Hoje o TRIO BAGUNÇA conta com diversas opções de personagens vivos, diferentes equipes de animação e pintura, oferta variada de histórias , camarim fashion e oficinas, com pacotes para todos os bolsos e gostos. Totalizando quase 70 colaboradores envolvidos, finalizamos 2015, 2016, 2017 e 2018 com muitos eventos realizados com qualidade e compromisso. E assim permanece até hoje, o Trio Bagunça tem a missão de entregar o melhor serviço e tornar Brasília uma cidade muito mais divertida.
+			Hoje o TRIO BAGUNÇA conta com diversas opções de personagens vivos, diferentes equipes de animação e pintura, oferta variada de histórias , camarim fashion e oficinas, com pacotes para todos os bolsos e gostos. Finalizamos 2015, 2016, 2017 e 2018 com muitos eventos realizados com qualidade e compromisso. E assim permanece até hoje, o Trio Bagunça tem a missão de entregar o melhor serviço e tornar Brasília uma cidade muito mais divertida.
 		</p>
 		<p>
 			Agora você conhece um pouquinho mais da nossa trajetória através desse resumo super legal sobre a nossa origem. O Trio Bagunça oferece um preço acessível e justo, comparando-se à qualidade do serviço ofertado, sendo sem dúvidas, a melhor opção para quem deseja realizar e tornar a festa ainda mais divertida.

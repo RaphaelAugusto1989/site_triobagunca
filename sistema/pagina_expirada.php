@@ -7,12 +7,11 @@ if (!isset($_SESSION)) {
 <html>
 <head>
 <meta charset="utf-8">
-<title>Documento sem título</title>
+<title>.:: Trio Bagunça ::.</title>
 </head>
 
 <body>
 <?php
-     session_start();
      $_SESSION = array();
      session_unset ();
      session_destroy ();

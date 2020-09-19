@@ -34,8 +34,62 @@
 		margin-top:  10px;
 	}
 
+	ul.espaco_cliente {
+		display: none;
+	}
+	
+	ul.espaco_cliente_phone {
+		display: block;
+		list-style-type: none;
+		cursor: default;
+		width: 150px;
+		margin: 0px;
+		margin-right: 0;
+		margin-top: 7px;
+		padding: 5px;
+		padding-bottom: 0;
+		float: right;
+		text-align: center;
+		border: none;
+	}
+	
+	li.espaco_cliente_phone {
+		display: block;
+		list-style: none;
+		width: 200px;
+		padding-top: 18px;
+		text-decoration: none;
+		color: #C60;
+		float: right;
+		font-size: 12px;
+		}
+	ul.espaco_cliente_phone a {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+	ul.espaco_cliente_phone a:hover {
+		background-color: transparent;
+		text-decoration: none;
+		color: #00D7E1;
+	}
+
+	.capa_evento {
+		width: 330px;
+		height: 330px;
+		padding: 10px;
+		border-radius: 10px;
+		float: left;
+	}
+
+	.foto_evento {
+		width: 90%;
+		float: right;
+		margin-bottom: 30px;
+	}
+	
+
 /*INICIO MENU PRINCIOPAL*/
-	label[for="bt_menu"]{
+	label[for="bt_menu"] {
 		padding-top: 5px;
 		display: block;
 		color: #FFFFFF !important;
@@ -156,13 +210,18 @@
 
 	.foto_recado {
 		width: 35%; 
+		height: 23px;
 		border: 1px solid hsla(0,0%,63%,1.00); 
 		border-radius: 5px 5px 5px 5px; 
-		padding: 9px; 
+		padding: 8px 8px 8px 0; 
 		background-color: #FFFFFF; 
-		color: #0072B0; 
+		float: left;
 		font-size: 16px; 
-		margin-left: 10px;
+		color: #000000;
+	}
+
+	.foto_cliente {
+		margin-right: 5px;
 	}
 
 	.pg a {
@@ -170,8 +229,8 @@
 		list-style: none;
 		font-family: Verdana, Arial, Helvetica;
 		font-size: 12px;
-		color: #1E90FF; 
-		border: 1px solid #1E90FF;
+		color: #000142; 
+		border: 1px solid #000142;
 		border-radius: 3px;
 		padding: 3px 8px; 
 		margin: 3px;
@@ -211,7 +270,7 @@
 	}
 	
 	.nomerecado {
-		width: 98%;
+		width: 97%;
 		float: left;
 		height: 30px;
 		border: 1px solid hsla(0,0%,63%,1.00);
@@ -223,11 +282,11 @@
 	}
 	
 	.foto_recado {
-		width: 96%;
+		width: 97.5%;
 		float: left;
 		border: 1px solid hsla(0,0%,63%,1.00); 
 		border-radius: 5px 5px 5px 5px; 
-		padding: 9px; 
+		padding: 8px 8px 8px 0;  
 		background-color: #FFFFFF; 
 		color: #0072B0; 
 		font-size: 16px; 
@@ -280,7 +339,7 @@
 	}
 	
 	.texto {
-		width: auto;
+		width: 90%;
 		padding: 10px;
 		margin: 10px;
 		background-color: hsla(0,0%,100%,0.31);
@@ -320,6 +379,7 @@
 		font-size: 16px;
 	}
 	
+	
 	.select {
 		width: 100%;
 	}
@@ -342,9 +402,9 @@
 	}	
 	.button {
 		width: 100%;
-		background: #6699FF;
+		background: #99CC33;
 		padding: 12px 32px;
-		color: #fff;
+		color: #000142;
 		font-size: 1em;
 		transition: 0.5s ease;
 		-o-transition: 0.5s ease;
@@ -376,6 +436,14 @@
 		text-align: center;
 		margin: 10px 0;
 	}
+
+	#fones {
+		font-weight: normal;
+	}
+
+	p#fones {
+		margin-top: 10px;
+	}
 	
 	#paginacao {
 		width: 100%;
@@ -386,7 +454,7 @@
 	a.pg {
 		font-family: Verdana, Arial, Helvetica; 
 		font-size: 11px; 
-		color: #003366; 
+		color: #000142; 
 		text-decoration: none;
 		list-style: none;
 	}
@@ -447,16 +515,22 @@
 	}
 	
 	.foto_recado {
-		width: 95%;
+		width: 97.3%;
 		float: left;
 		border: 1px solid hsla(0,0%,63%,1.00); 
 		border-radius: 5px 5px 5px 5px; 
-		padding: 9px; 
+		padding: 8px 8px 8px 0;  
 		background-color: #FFFFFF; 
 		color: #0072B0; 
 		font-size: 14px; 
 		margin-left: 0;
 	}
+
+	.uploadfile {
+		width: 60%;
+		border: 0;
+		background-color: #FFFFFF;
+	  }
 	
 	#table_recados {
 		color: #000142;
@@ -494,7 +568,7 @@
 		object-fit: cover;
 		border: 3px solid #0072B0;
 	}
-	
+
 	.table_cont {
 		width: 100%;
 		line-height: 20px;
@@ -512,6 +586,14 @@
 		padding: 5px;
 		color: #000142;
 		font-size: 16px;
+	}
+
+	#endereco {
+		width: 78%;
+	}
+
+	#num {
+		width: 12.6%;
 	}
 	
 	.select {
@@ -537,9 +619,9 @@
 	
 	.button {
 		width: 100%;
-		background: #6699FF;
+		background: #99CC33;
 		padding: 12px 32px;
-		color: #fff;
+		color: #000142;
 		font-size: 1em;
 		transition: 0.5s ease;
 		-o-transition: 0.5s ease;
@@ -582,7 +664,7 @@
 	a.pg {
 		font-family: Verdana, Arial, Helvetica; 
 		font-size: 11px; 
-		color: #003366; 
+		color: #000142; 
 		text-decoration: none;
 		list-style: none;
 	}

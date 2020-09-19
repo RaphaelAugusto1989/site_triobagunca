@@ -128,8 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <td>Usuário:<br />
         <input type="text" name="usuario" class="contato" style="width: 97%;" value="<?php echo $tr['login_usuario'];?>">
       </td>
-      <td style="padding-left: 10px;"><br />
-        <a href="altera_senha_usuario.php?id=<?php echo $tr['id_usuario'];?>" >Alterar Senha</a>
+      <td>Senha:<br />
+        <input type="password" name="senha" class="contato" style="width: 98%;">
       </td>
     </tr>
     <tr>

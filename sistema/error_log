@@ -67,3 +67,8 @@
 [10-Jun-2019 01:25:37 America/Sao_Paulo] PHP Warning:  Maximum number of allowable file uploads has been exceeded in Unknown on line 0
 [10-Jun-2019 01:25:38 America/Sao_Paulo] PHP Warning:  Maximum number of allowable file uploads has been exceeded in Unknown on line 0
 [10-Jun-2019 01:25:38 America/Sao_Paulo] PHP Warning:  Maximum number of allowable file uploads has been exceeded in Unknown on line 0
+[31-Oct-2019 11:43:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected end of file in /home/triob261/dev.triobagunca.com.br/sistema/lista_evento.php on line 159
+[31-Oct-2019 11:43:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ']', expecting ',' or ';' in /home/triob261/dev.triobagunca.com.br/sistema/lista_evento.php on line 115
+[31-Oct-2019 12:11:09 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ']', expecting ',' or ';' in /home/triob261/dev.triobagunca.com.br/sistema/lista_evento.php on line 115
+[16-Dec-2019 14:28:36 America/Fortaleza] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/triob261/dev.triobagunca.com.br/sistema/sis_importar_bd.php on line 107
+[09-Jan-2020 20:00:10 America/Fortaleza] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/triob261/dev.triobagunca.com.br/sistema/sis_evento.php on line 59

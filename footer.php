@@ -10,8 +10,10 @@
 					<a href="https://www.facebook.com/TrioBagunca" target="_blank" title="Facebook"><img src="img/logo_facebook.png" class="sociais"></a>
 					<a href="https://www.youtube.com/channel/UCTovfsXk0kaDz4IgSfoxNgw" target="_blank" title="YouTube"><img src="img/logo_youtube.png" class="sociais"></a>
 				<div id="fones">
-					<p style="font-size: 18px; font-weight: bold;">Contato:</p>
-					<p>(61) 99181-5767 <img src="img/logo_whatsapp.png" style="width: 15px; margin-left: 5px;"> <img src="img/logo_claro.png" style="width: 16px; margin-left: 5px;"> <br />
+				<p style="font-size: 18px; font-weight: bold;">Endereço:</p>
+					<p>Avenida das Araucárias S/N Lote 1525, Loja 44 - 2° Piso - Metrópole Shopping - Águas Claras; Brasília/ Distrito Federal - CEP 71936250</p>
+					<p style="font-size: 18px; font-weight: bold;">Contatos:</p>
+					<p>(61) 3797-8080 / 99181-5767 <img src="img/logo_whatsapp.png" style="width: 15px; margin-left: 5px;"> <br />
 					<span style="font-weight: normal; font-size: 16px;">Orçamento pelo whatsapp </span>
 				</div>
 			</div>
@@ -22,7 +24,6 @@
 	  <li class="login"><a href="login" target="_blank">Área do administrador</a> </li>
 	</ul>
 	<div id="restrito2">
-		
      	<span style="position: absolute; right: 500px; margin-top: 10px;">Copyright &copy; 2016 - <?php date_default_timezone_set('America/Sao_Paulo'); echo date(Y);?>. Todos os direitos reservados.</span>
      </div>
      <div id="artspeck">

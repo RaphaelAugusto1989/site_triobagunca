@@ -11,3 +11,4 @@
 [23-May-2019 15:30:08 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
 [23-May-2019 17:51:03 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
 [23-May-2019 17:52:29 America/Chicago] PHP Warning:  inet_ntop(): Invalid in_addr value in /home/triob261/public_html/AcessosAoSistema.php on line 13
+[01-Nov-2019 10:02:09 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting ',' or ';' in /home/triob261/dev.triobagunca.com.br/index.php on line 30

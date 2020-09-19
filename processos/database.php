@@ -23,7 +23,7 @@ function DBUpDate($table, array $data, $where = null){
 	$where = ($where) ? " WHERE {$where}" : null;
 
 	$query = "UPDATE {$table} SET {$fields}{$where}";
-	//echo $query;
+	//echo $query; exit;
 	return DBExecute($query);
 }
 

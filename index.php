@@ -7,7 +7,7 @@
             require 'processos/connection.php';
             require 'processos/database.php';
 
-            $LeBanner = DBRead ('banners', "ORDER BY ordem_banner ASC");
+            $LeBanner = DBRead ('banners', "ORDER BY id_banner ASC");
 
             //var_dump($LeBanner);
             foreach ($LeBanner as $bn) {
@@ -24,6 +24,10 @@
 		<center> Já foi cliente Trio Bagunça? Conte-nos o que achou!</center>
 	</div>
 <?php
+  $user_agents = array("iPhone","iPad","Android","webOS","BlackBerry","iPod","Symbian","IsGeneric");
+  $mobile = strpos($_SERVER['HTTP_USER_AGENT'], $user_agents);
+  echo "<b style='color: #FFFFFF;'>".$mobile."</b>";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
   //RECEBE DADOS DO FORMULARIO
@@ -90,12 +94,14 @@ function test_input($data) {
   <tbody>
     <tr>
       <td>
-      <?php echo @$ErrNome; ?><br />
-      <input type="text" name="nome"<?php if ($ErrNome == true) { echo "style='width: 50%; color: #C40003; border: 2px #A70002 solid;'";} ?> class="nomerecado" required placeholder="Nome">
+        <?php echo @$ErrNome; ?><br />
+        <input type="text" name="nome"<?php if ($ErrNome == true) { echo "style='width: 50%; color: #C40003; border: 2px #A70002 solid;'";} ?> class="nomerecado" required placeholder="Nome">
       
-      <span class="foto_recado">Inserir Foto: <?php echo @$ErrFile; ?>
-      	<input type="file" name="imagem"  class="foto_recado_file" <?php if ($ErrFile == true) { echo "style='color: #C40003; border: 2px #A70002 solid;'";} ?>>
-      </span>
+        <div class="foto_recado" <?php if ($ErrFile == true) { echo "style='color: #C40003; border: 2px #A70002 solid;'";} ?>> <?php echo @$ErrFile; ?>
+            <label for='uploadBtn' class="uploadBtn">Selecionar Foto</label>
+            <input type="file" name="imagem" class="foto_recado_file" id="uploadBtn">
+            <input id="uploadFile" disabled="disabled" class="uploadfile" />
+        </div>
       </td>
     </tr>
     <tr>
@@ -158,5 +164,9 @@ $recados = DBRead ("recados", "WHERE aprovacao = 'Sim' ORDER BY id_recado DESC L
 </div>
 </div><!--FIM RECADOS-->	
 </div><!--FIM CORPO-->
-
+<script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function () {
+        document.getElementById("uploadFile").value = this.value;
+    };
+</script>
 <?php include "footer.php"; ?>

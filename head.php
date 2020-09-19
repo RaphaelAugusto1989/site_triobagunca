@@ -8,6 +8,8 @@
 <link href="css/responsive.css" type="text/css" rel="stylesheet">
 <link href="css/destaque.css" type="text/css" rel="stylesheet" />
 <link href="css/lightbox.css" type="text/css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!--<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>-->
 <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
 <script type="text/javascript" src="js/jquery.destaques.js"></script>
@@ -68,6 +70,15 @@
 	  });
     });
 
+	function SomenteNumero(e){
+		var tecla=(window.event)?event.keyCode:e.which;   
+		if((tecla>47 && tecla<58)) return true;
+		else {
+			if (tecla==8 || tecla==0) return true;
+			else  return false;
+		}
+	}
+
 </script>
 </head>
 
@@ -84,8 +95,14 @@
 <div id="topo"><!--INICIO TOPO-->
 	<div id="cabecalho"><!--INICIO CABEÇALHO-->
 		<img src="img/logo-trio.png" class="logotrio">
+		<ul class="espaco_cliente">
+			<li><a href="LoginCliente"><b><i class="fa fa-user"></i> Espaço do cliente</b></a></li>
+		</ul>
 	</div><!--FIM CABEÇALHO-->
 	<div id="menu"><!--INICIO MENU-->
+			<ul class="espaco_cliente_phone">
+				<li><a href="LoginCliente"><b><i class="fa fa-user"></i> Espaço do cliente</b></a></li>
+			</ul>
 			<input type="checkbox" id="bt_menu">
 				<label for="bt_menu">&#9776; <span style="font-size: 20px;">Menu</span></label>
 			<nav class="menu">
@@ -100,14 +117,27 @@
 							<li><a href="oficina_de_slime">Oficina de Slime</a></li>
 							<li><a href="personagens_vivos">Personagens Vivos</a></li>
 							<li><a href="pintura_de_rosto">Pintura de Rosto</a></li>
+							<li><a href="galeria">Galeria de Fotos</a></li>
 						</ul>
 					</li>
-					<li><a href="espaco_bagunca">Espaço Bagunça</a></li>
-					<li><a href="trio_bagunca">Equipe</a></li>
-					<li><a href="eventos">Eventos</a></li>
-					<li><a href="galeria">Galeria</a></li>
+					<li><a href="#">Espaço Bagunça</a>
+						<ul>
+							<li><a href="conheca_espaco_bagunca">Conheça o Espaço Bagunça</a></li>
+							<li><a href="agenda_espaco_bagunca">Agenda Espaço Bagunça</a></li>
+						</ul>
+					</li>
+<!-- 					<li><a href="trio_bagunca">Equipe</a></li>
+ -->					<li><a href="#">Agenda</a>
+						<ul>
+							<li><a href="eventos">Próximos Eventos</a></li>
+							<li><a href="eventos_anteriores">Eventos Anteriores</a></li>
+						</ul>				
+					</li>
+					<li><a href="alguns_clientes">Alguns Clientes</a></li>
+					<li><a href="indicacoes">Indicações</a></li>
 					<li><a href="contatos">Contatos</a></li>
 				</ul>
 			</nav>
+			
 	</div><!--FIM MENU-->
 </div><!--FIM TOPO-->
