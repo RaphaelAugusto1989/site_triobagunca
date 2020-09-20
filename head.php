@@ -112,12 +112,15 @@
 					<li><a href="#">Serviços</a>
 						<ul>
 							<li><a href="animacao_infantil">Animação Infantil</a></li>
+							<li><a href="animacao_oline">Animação Online</a></li>
 							<li><a href="camarim_fashion">Camarim Fashion</a></li>
 							<li><a href="contacao_de_historias">Contação de Histórias/Teatro</a></li>
 							<li><a href="oficina_de_slime">Oficina de Slime</a></li>
 							<li><a href="personagens_vivos">Personagens Vivos</a></li>
 							<li><a href="pintura_de_rosto">Pintura de Rosto</a></li>
 							<li><a href="galeria">Galeria de Fotos</a></li>
+							<li><a href="video_chamada_magica">Vídeo Chamada Mágica</a></li>
+							<li><a href="video_personalizado_magico">Vídeo Personalizado Mágico</a></li>
 						</ul>
 					</li>
 					<li><a href="#">Espaço Bagunça</a>

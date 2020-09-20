@@ -92,11 +92,14 @@ $grava = DBCreate('servicos', $servico);
       <td width="133">Tipo de Serviço:
       	<select name="tipo_servico" class="contato" style="width: 100%; height: 40px;">
             <option>Animação Infantil</option>
+            <option>Animação Online</option>
             <option>Camarim Fashion</option>
             <option>Contação de História</option>
             <option>Oficina de Slime</option>
             <option>Personagem Vivo</option>
             <option>Pintura de Rosto</option>
+            <option>Vídeo Chamada Mágica</option>
+            <option>Vídeo Personalizado Mágico</option>
       	</select>
       </td>
     </tr>

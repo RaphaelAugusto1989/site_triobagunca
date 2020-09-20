@@ -68,11 +68,14 @@
 		      <ul>
 		        <li><a href="sis_servicos.php" target="frame"><i class="fa fa-user-plus" aria-hidden="true"></i> Cadastrar Serviços</a></li>
 				<li><a href="visualizar_animacao.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Animação Infantil</a></li>
+				<li><a href="visualizar_animacoes_online.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Animação Online</a></li>
 				<li><a href="visualizar_camarim.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Camarim Fashion</a></li>
 				<li><a href="visualizar_historia.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Contação de História</a></li>
 		         <li><a href="visualizar_oficina.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Oficina de Slime</a></li>
 				<li><a href="visualizar_personagens.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Personagens Vivos</a></li>
 				<li><a href="visualizar_pintura.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Pintura de Rosto</a></li>
+				<li><a href="visualizar_video_chamada_magica.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Vídeo Chamada Mágica</a></li>
+				<li><a href="visualizar_video_personalizado_magico.php" target="frame"><i class="fa fa-eye" aria-hidden="true"></i>Vídeo Personalizado Mágico</a></li>
 		      </ul>
 		   </li>
 		   <li class='active has-sub'><a href='#'><span>Eventos</span></a>
