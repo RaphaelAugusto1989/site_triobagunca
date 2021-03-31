@@ -14,7 +14,7 @@
           O serviço de animação infantil é oferecido pelo período de 3 horas, mas a depender do seu desejo, esse tempo pode ser maior ou menor.
         </p>
         <p>
-          Nós possuímos pacotes para todos os tipos de gostos e bolsos, como o “Bagunça Top”, por exemplo, que é o nosso serviço de animação mais completo, o qual apresenta som/microfone de melhor performance e brincadeiras exclusivas a esse pacote, como o “torta na cara”, caça ao tesouro com pistas, enceradeira humana e futebol de pano . Além do "Bagunça Top", temos outros pacotes mais simples que atendem bem a necessidade da criançada, além de pacotes promocionais que acabam saindo mais em conta.
+          Nós possuímos pacotes para todos os tipos de gostos e bolsos, como o “Bagunça Top”, por exemplo, que é o nosso serviço de animação mais completo, o qual apresenta som/microfone de melhor performance e brincadeiras exclusivas a esse pacote, como o “torta na cara”, caça ao tesouro com pistas, enceradeira humana e futebol de pano . Além do "Bagunça Top", temos outros pacotes mais simples que atendem bem a necessidade da criançada, além de pacotes promocionais que acabam saindo mais em conta.  Além disso, temos pacotes exclusivos para a animação na água, além de pacotes exclusivos para a faixa etária de 2 a 4 anos.  São diversas opções para levar alegria, diversão e muuita alegria a todos.
         </p>
         <p>
           Confira um pouco mais do nosso trabalho e solicite o quanto antes seu orçamento, assim você pode garantir muito mais diversão para a sua festa!!!

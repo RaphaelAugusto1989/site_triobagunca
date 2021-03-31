@@ -5,7 +5,7 @@
 			PINTURA DE ROSTO
 		</div>
 <p>
-A pintura de rosto é um dos serviços mais clássicos no mundo das festas infantis, o seu resultado é tão notável, criativo e divertido que mesmo com o passar dos anos ela não fica ultrapassada, na verdade jamais ficará, até alguns pais e convidados gostam de pintar o rosto.
+A pintura de rosto é um dos serviços mais clássicos no mundo das festas infantis, o seu resultado é tão notável, criativo e divertido que mesmo com o passar dos anos não fica ultrapassada, na verdade jamais ficará, até alguns pais e convidados gostam de pintar o rosto.
 </p>
 <p>
 Os nossos pintores são capazes de fazer os mais distintos desenhos corporais, desde os badalados heróis e princesas até os bichos mais conhecidos da natureza. É super comum ver crianças de todas as idades encantadas com essa arte, braços, mãos e rosto são a maior pedida, claro, nossa equipe sempre leva em consideração as recomendações dos responsáveis.

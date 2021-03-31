@@ -8,7 +8,7 @@
             A vídeo chamada mágica têm feito muito sucesso, pois além de poder receber a ligação daquele personagem tão querido no próprio conforto de casa, o valor se torna um grande atrativo. 
             </p>
             <p>
-            O personagem escolhido faz uma ligação e conversa com a criança ao vivo. Durante a chamada, o personagem conversar, interage, brinca com a criança ou crianças e a diversão não fica de fora. 
+            O personagem escolhido faz uma ligação e conversa com a criança ao vivo. Durante a chamada, o personagem conversa, interage, brinca com a criança ou crianças e a diversão não fica de fora. 
             Além disso, o personagem pode passar algum recadinho importante a pedido do papai e da mamãe ou de alguém querido. A vídeo chamada mágica rompe fronteiras e pode ser feita para crianças em outras 
             cidades, estados ou países. Tem duração média de 30 minutos. 
 			</p>

@@ -43,10 +43,10 @@
 
         <?php 
           echo "<a href='img/servicos/".$lj['imagem_servico']."' data-lightbox='roadtrip' title='".$lj['nome_servico']."'>
-                <div class='hoverzoom'>
-                    <img src='img/servicos/".$lj['imagem_servico']."'>
-                </div>
-            </a><div class='nome'>Raphael Augusto</div>";
+                  <div class='hoverzoom'>
+                      <img src='img/servicos/".$lj['imagem_servico']."'>
+                  </div>
+                </a>";
         ?>
     <?php
       }
@@ -57,8 +57,7 @@
               include("paginacao.php"); // chamada do arquivo. ex: << Anterior 1 2 3 4 5 Próxima >>
             }
         ?>
-    </div>
-  </div>
+      </div>
 </div>
 </body>
 </html>

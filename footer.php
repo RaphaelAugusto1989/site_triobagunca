@@ -13,11 +13,20 @@
 				<p style="font-size: 18px; font-weight: bold;">Endereço:</p>
 					<p>Avenida das Araucárias S/N Lote 1525, Loja 44 - 2° Piso - Metrópole Shopping - Águas Claras; Brasília/ Distrito Federal - CEP 71936250</p>
 					<p style="font-size: 18px; font-weight: bold;">Contatos:</p>
-					<p>(61) 3797-8080 / 99181-5767 <img src="img/logo_whatsapp.png" style="width: 15px; margin-left: 5px;"> <br />
+					<p>
+						(61) 3797-8080 / 
+						<a href="https://api.whatsapp.com/send?phone=5561991815767" target="_blank" class="link-whatsapp" style="color: #B7F0FF;">
+							99181-5767 <img src="img/logo_whatsapp.png" style="width: 15px; margin-left: 5px;"> 
+						</a>
+						<div class="aviso-whatsapp">
+							Clique no número de telefone para abrir o whatsapp!
+						</div>
+					</p>
 					<span style="font-weight: normal; font-size: 16px;">Orçamento pelo whatsapp </span>
 				</div>
 			</div>
 	</div>
+</div>
 </div><!--FIM RODAPÉ-->
 <div id="restrito"><!--INICIO RODAPÉ RESTRITO-->
 	<ul class="login"> 

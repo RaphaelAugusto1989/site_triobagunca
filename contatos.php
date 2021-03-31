@@ -90,9 +90,19 @@
 			</form>
 			
 			<div class="texto_rodape" style="width:100%;">
-				<p style="font-size:20px; margin-bottom: 20px;"> 
-				<b>Telefones: </b>
-				<br /> (61) 3797-8080 / 99181-5767 <img src="img/logo_whatsapp.png" style="width: 22px; margin-left: 5px;"> <br />
+				<!-- <p style="font-size:20px; margin-bottom: 20px;">  -->
+					<b>Telefones: </b>
+					<br /> 
+					
+					(61) 3797-8080 / 
+					<a href="https://api.whatsapp.com/send?phone=5561991815767" target="_blank" class="link-whatsapp">
+						99181-5767 <img src="img/logo_whatsapp.png" style="width: 22px; margin-left: 5px;"> 
+					</a>
+					<div class="aviso-whatsapp">
+						Clique no número de telefone para abrir o whatsapp!
+					</div>
+				<!-- </p> -->
+				<br />
 				Orçamento pelo whatsapp
 				<p class="titulo" style="margin-top:24px; font-size: 22px; font-weight: bold;">Atendimento por e-mail </p>
 				<p>triobaguncafesta@gmail.com</p>

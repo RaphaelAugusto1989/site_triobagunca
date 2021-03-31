@@ -11,8 +11,15 @@
 					<a href="https://www.youtube.com/channel/UCTovfsXk0kaDz4IgSfoxNgw" target="_blank" title="YouTube"><img src="img/logo_youtube.png" class="sociais"></a>
 				<div id="fones">
 					<p style="font-size: 18px; font-weight: bold;">Contato:</p>
-					<p>(61) 99181-5767 <img src="img/logo_whatsapp.png" style="width: 15px; margin-left: 5px;"> <img src="img/logo_claro.png" style="width: 16px; margin-left: 5px;"> <br />
+					<p>
+					<a href="https://api.whatsapp.com/send?phone=5561991815767" target="_blank">
+						(61) 99181-5767
+					</a>
+						<img src="img/logo_whatsapp.png" style="width: 15px; margin-left: 5px;"> 
+						<img src="img/logo_claro.png" style="width: 16px; margin-left: 5px;">
+					</p>
 					<span style="font-weight: normal; font-size: 16px;">Orçamento pelo whatsapp </span>
+					
 				</div>
 			</div>
 	</div>
