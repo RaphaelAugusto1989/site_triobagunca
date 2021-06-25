@@ -101,7 +101,7 @@ ul.espaco_cliente a:hover {
     border: 0 solid;
 	list-style: none;
 	z-index: 100;
-	padding-left: 80px;
+	padding-left: 90px;
 }
 
 .menu ul {
@@ -124,7 +124,7 @@ ul.espaco_cliente a:hover {
  }
 
 .menu ul li a {
-	padding: 7px 20px 5px 20px;
+	padding: 7px 40px 5px 40px;
 	width: auto; /*LARGURA DO MENU*/
 	/* max-width: 126px; LARGURA DO MENU */
 	height: 25px;
